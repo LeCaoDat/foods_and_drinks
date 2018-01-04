@@ -7,4 +7,6 @@ Rails.application.routes.draw do
   get "/search", to: "filters#show"
   resources :users, only: %i(new create show)
   resources :products
+  resources :ratings, only: [:create]
+  resources :comments, only: [:create]
 end

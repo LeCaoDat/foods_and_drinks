@@ -1,8 +1,12 @@
 class ProductsController < ApplicationController
   before_action :load_product, only: %i(show)
 
+  def new; end
+
   def show
-    @comments = @product.comments.paginate page: params[:page],
+    @rating = @product.ratings.build
+    @comment = @product.comments.build
+    @comments = @product.comments.desc_created_at.paginate page: params[:page],
       per_page: Settings.products.number_of_comment
     respond_to do |format|
       format.html
