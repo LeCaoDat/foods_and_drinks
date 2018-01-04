@@ -1,0 +1,5 @@
+home:
+  number_of_products: 4
+categories:
+  food_default_id: 1
+  drink_default_id: 2

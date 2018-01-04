@@ -1,0 +1,50 @@
+<li class="item col-lg-3 col-md-4 col-sm-6 col-xs-6 ">
+  <div class="product-item">
+    <div class="item-inner">
+      <div class="product-thumbnail">
+        <div class="pr-img-area"> <a title="Ipsums Dolors Untra" href="single_product.html">
+          <figure>
+             <%= link_to "", class: "product-image", title: product.name do %>
+              <% if product.picture? %>
+                <%= image_tag product.picture.url, class: "first-img", alt: product.name %>
+              <% else %>
+                <%= image_tag "no_image.jpg", class: "first-img", alt: t(".no_image") %>
+              <% end %>
+            <% end %>
+          </figure>
+          </a>
+          <button type="button" class="add-to-cart-mt">
+            <%= link_to "" do %>
+              <i class="fa fa-shopping-cart"></i>
+              <span><%= t ".add_to_cart" %></span>
+            <% end %>
+          </button>
+        </div>
+      </div>
+      <div class="item-info">
+        <div class="info-inner">
+          <div class="item-title">
+            <%= link_to product.name, "", title: product.name %>
+          </div>
+          <div class="item-content">
+            <div class="rating">
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+              <i class="fa fa-star-o"></i>
+            </div>
+            <div class="item-price">
+              <div class="price-box">
+                <p class="special-price">
+                  <span class="price-label"><%= t ".price_label" %></span>
+                  <span class="price"><%= t ".price", price: product.price %></span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</li>
