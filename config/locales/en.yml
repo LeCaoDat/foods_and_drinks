@@ -13,6 +13,7 @@ en:
       log_out: "Log Out"
       sign_up: "Sign Up"
       logo: "Logo"
+      search_place_holder: "Search name of product"
       recently_added_item: "Recently added item(s)"
       cart: "Cart"
       items: "%{item} Item(s)"
@@ -29,6 +30,7 @@ en:
       shop_by_category: "Shop by category"
       home: "Home"
       suggest: "Suggest"
+      search: "Search"
       hot_trend: "Hot trend"
     footer:
       design_by: "Design by DT"
@@ -95,3 +97,22 @@ en:
       submit: "Log in"
       lost_password: "Lost your password?"
       create_account: "Create your very own account"
+  up_user:
+    up_edit:
+      submit: "Create my account"
+      confirm: "Password confirmation"
+  filters:
+    search_title: "Search"
+    show:
+      products: "Products"
+      shop_by: "Shop By"
+      categories: "Categories"
+      price: "Price"
+      min_price: "Min price"
+      max_price: "Max price"
+      search: "Search"
+      rating: "Rating"
+      stars: "%{star} stars"
+      all_product: "All product"
+  categories:
+    level: "&nbsp;&nbsp;&nbsp;"

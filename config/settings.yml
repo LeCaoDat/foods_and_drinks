@@ -1,6 +1,7 @@
 home:
   number_of_products: 4
 categories:
+  root_id: 0
   food_default_id: 1
   drink_default_id: 2
 products:
@@ -18,4 +19,5 @@ sessions_controller:
 up_edit:
   boy: 1
   girl: 0
-
+filters:
+  number_of_products: 8
