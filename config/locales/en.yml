@@ -1,2 +1,31 @@
 en:
   base_title: "Foods And Drinks"
+  layouts:
+    header:
+      wellcome_msg: "Welcome to Foods and Drinks!"
+      call_us: "Call Us: +123.456.789"
+      my_account: "My Account"
+      sign_in: "Sign In"
+      logo: "Logo"
+      recently_added_item: "Recently added item(s)"
+      cart: "Cart"
+      items: "%{item} Item(s)"
+      subtotal: "Subtotal: "
+      price: "$ %{price}"
+      checkout: "Checkout"
+      view_cart: "View Cart"
+    mobile_menu:
+      home: "Home"
+      suggest: "Suggest"
+      categories: "Categories"
+    navbar:
+      categories: "Categories"
+      shop_by_category: "Shop by category"
+      home: "Home"
+      suggest: "Suggest"
+      hot_trend: "Hot trend"
+    footer:
+      design_by: "Design by DT"
+    static_pages:
+      home:
+        home_title: "Home"
