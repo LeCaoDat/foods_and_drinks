@@ -1,0 +1,14 @@
+<li>
+  <div class="avartar">
+    <%= image_tag "avatar.png" %>
+  </div>
+  <div class="comment-body">
+    <div class="comment-meta">
+      <span class="author">
+        <a href="#"><%= find_user_name comment.user_id %></a>
+      </span>
+      <span class="date"><%= time_ago_in_words comment.created_at %></span>
+    </div>
+    <div class="comment"><%= comment.content %></div>
+  </div>
+</li>

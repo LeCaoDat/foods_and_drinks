@@ -1,5 +1,6 @@
 en:
   base_title: "Foods And Drinks"
+  close_popup: "Close"
   layouts:
     header:
       wellcome_msg: "Welcome to Foods and Drinks!"
@@ -27,13 +28,32 @@ en:
     footer:
       design_by: "Design by DT"
   static_pages:
-    category_area:
+    no_item: "No item"
+    home:
+      home_title: "Home"
       food_category: "Food"
       drink_category: "Drink"
-      no_item: "No item"
   products:
-    product:
-      price_label: "Price"
-      price: "$ %{price}"
-      add_to_cart: "Add to Cart"
-      no_image: "No image"
+    price_label: "Price"
+    price: "$ %{price}"
+    add_to_cart: "Add to Cart"
+    no_image: "No image"
+    not_found_product: "Not found product"
+    show:
+      count_comment: "%{count} Commtent(s)"
+      available: "Availability: "
+      in_stock: "In Stock"
+      out_of_stock: "Out of stock"
+      quantity: "Quantity:"
+      description: "Description"
+      comment_review: "Comment and Rating"
+      comments: "Comments"
+      rate_question: "How do you rate this product?"
+      rating_label: "Rate"
+      comment_form_h2: "Write Your Own Review"
+      comment_label: "Comment"
+      button_submit: "Comment"
+      no_comment: "No comment"
+      stars: "%{number} stars"
+    users:
+      anonymous: "Anonymous"

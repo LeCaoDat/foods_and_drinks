@@ -11,4 +11,8 @@ class PictureUploader < CarrierWave::Uploader::Base
   def extension_white_list
     %w(jpg jpeg gif png)
   end
+
+  def default_url
+    ActionController::Base.helpers.asset_path(["no_image.jpg"].compact.join("_"))
+  end
 end

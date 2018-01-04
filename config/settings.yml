@@ -3,3 +3,8 @@ home:
 categories:
   food_default_id: 1
   drink_default_id: 2
+products:
+  number_of_comment: 5
+  star_min: 1
+  star_max: 5
+  out_of_stock: 0
