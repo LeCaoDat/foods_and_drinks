@@ -1,0 +1,49 @@
+<nav>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3 col-sm-4">
+        <div class="mm-toggle-wrap">
+          <div class="mm-toggle"> <i class="fa fa-align-justify"></i> </div>
+          <span class="mm-label"><%= t ".categories" %></span> </div>
+        <div class="mega-container visible-lg visible-md visible-sm">
+          <div class="navleft-container">
+            <div class="mega-menu-title">
+              <h3><%= t ".shop_by_category" %></h3>
+            </div>
+            <div class="mega-menu-category">
+              <ul class="nav">
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-9 col-sm-8">
+        <div class="mtmegamenu">
+          <ul>
+            <li class="mt-root">
+              <div class="mt-root-item">
+                <%= link_to root_path do %>
+                  <div class="title title_font"><span class="title-text"><%= t ".home" %></span></div>
+                <% end %>
+              </div>
+            </li>
+            <li class="mt-root">
+              <div class="mt-root-item">
+                <%= link_to root_path do %>
+                  <div class="title title_font"><span class="title-text"><%= t ".suggest" %></span></div>
+                <% end %>
+              </div>
+            </li>
+            <li class="mt-root">
+              <div class="mt-root-item">
+                <div class="title title_font"><span class="title-text"><%= t ".hot_trend" %></span></div>
+              </div>
+              <ul class="menu-items col-xs-12">
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>

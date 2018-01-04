@@ -1,0 +1,90 @@
+<header>
+  <div class="header-container">
+    <div class="header-top">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-sm-4 col-md-5 hidden-xs">
+            <div class="welcome-msg "><%= t ".wellcome_msg" %></div>
+            <span class="phone hidden-sm"><%= t ".call_us" %></span>
+          </div>
+          <div class="headerlinkmenu col-lg-8 col-md-7 col-sm-8 col-xs-12">
+            <div class="links">
+              <div class="myaccount">
+                <%= link_to "", title: t(".my_account") do %>
+                  <i class="fa fa-user"></i><span class="hidden-xs"><%= t ".my_account" %></span>
+                <% end %>
+              </div>
+              <div class="login">
+                <%= link_to "" do %>
+                  <i  class="fa fa-unlock-alt"></i><span class="hidden-xs"><%= t ".sign_in" %></span>
+                <% end  %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-3 col-md-3 col-xs-12">
+          <div class="logo">
+            <%= link_to root_path, title: t(".logo") do %>
+              <%= image_tag("logo.png", atl: t(".logo"))%>
+            <% end %>
+          </div>
+        </div>
+        <div class="col-xs-9 col-sm-6 col-md-7">
+
+          <div class="top-search">
+            <div id="search">
+              <form>
+                <div class="input-group">
+                  <select class="cate-dropdown hidden-xs" name="category_id">
+                  </select>
+                  <input type="text" class="form-control" placeholder="Search" name="search">
+                  <button class="btn-search" type="button"><i class="fa fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="col-lg-2 col-xs-3 top-cart">
+          <div class="top-cart-contain">
+            <div class="mini-cart">
+              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle">
+                <%= link_to "" do %>
+                  <div class="cart-icon"><i class="fa fa-shopping-cart"></i></div>
+                  <div class="shoppingcart-inner hidden-xs">
+                    <span class="cart-title"><%= t ".cart" %></span>
+                    <span class="cart-total"><%= t ".items", item: "0" %></span>
+                  </div>
+                <% end %>
+              </div>
+              <div>
+                <div class="top-cart-content">
+                  <div class="block-subtitle hidden-xs"><%= t ".recently_added_item" %></div>
+                  <ul id="cart-sidebar" class="mini-products-list">
+                    <p>No item</p>
+                  </ul>
+                  <div class="top-subtotal">
+                    <%= t ".subtotal" %><span class="price"><%= t ".price", price: "0" %></span>
+                  </div>
+                  <div class="actions">
+                    <button class="btn-checkout" type="button">
+                      <i class="fa fa-check"></i><span><%= t ".checkout" %></span>
+                    </button>
+                    <button class="view-cart" type="button">
+                      <i class="fa fa-shopping-cart"></i> <span><%= t ".view_cart" %></span>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
