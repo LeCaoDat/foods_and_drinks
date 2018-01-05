@@ -26,6 +26,14 @@ en:
       hot_trend: "Hot trend"
     footer:
       design_by: "Design by DT"
-    static_pages:
-      home:
-        home_title: "Home"
+  static_pages:
+    category_area:
+      food_category: "Food"
+      drink_category: "Drink"
+      no_item: "No item"
+  products:
+    product:
+      price_label: "Price"
+      price: "$ %{price}"
+      add_to_cart: "Add to Cart"
+      no_image: "No image"
