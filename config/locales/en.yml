@@ -7,6 +7,7 @@ en:
       call_us: "Call Us: +123.456.789"
       my_account: "My Account"
       sign_in: "Sign In"
+      login: "login"
       logo: "Logo"
       recently_added_item: "Recently added item(s)"
       cart: "Cart"
@@ -69,11 +70,20 @@ en:
       li_speed: "Speed your way through checkout"
       li_track: "Track your orders easily"
       li_keep: "Keep a record of all your purchases"
+    up_edit:
+      submit: "Create my account"
+      confirm: "Password confirmation"
   shared:
     error_messages:
       error_content: "The form contains"
       error: "error"
-  up_user:
-    up_edit:
-      submit: "Create my account"
-      confirm: "Password confirmation"
+  sessions:
+    create:
+      danger_failed: "Invalid email/password combination"
+    new:
+      login: "Login"
+      signin_account: "Welcome back! Sign in to your account"
+      remember: "Remember me"
+      submit: "Log in"
+      lost_password: "Lost your password?"
+      create_account: "Create your very own account"
