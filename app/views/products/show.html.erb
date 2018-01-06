@@ -1,0 +1,138 @@
+<% provide :title, @product.name %>
+<div class="main-container col1-layout">
+  <div class="container">
+    <div class="row">
+      <div class="col-main">
+        <div class="product-view-area">
+          <div class="product-big-image col-xs-12 col-sm-5 col-lg-5 col-md-5">
+            <div class="large-image">
+              <%= image_tag @product.picture.url, class: "first-img", alt: @product.name %>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-7 col-lg-7 col-md-7 product-details-area">
+              <div class="product-name">
+                <h1><%= @product.name %></h1>
+              </div>
+              <div class="price-box">
+                <p class="special-price">
+                  <span class="price-label"><%= t "products.price_label" %></span
+                  <span class="price"><%= t "products.price", price: @product.price %></span>
+                </p>
+              </div>
+              <div class="ratings">
+                <div class="rating">
+                  <%= product_rating @product %>
+                </div>
+                <% in_stock = @product.quality > Settings.products.out_of_stock %>
+                <p class="rating-links"><%= t ".count_comment", count: @product.comments.size %></p>
+                <p class="availability pull-right <%= in_stock ? "in-stock " : "out-of-stock" %>">
+                  <%= t ".available" %>
+                  <span>
+                    <%= in_stock ? t(".in_stock") : t(".out_of_stock") %>
+                  </span>
+                </p>
+              </div>
+              <div class="product-variation">
+                <form action="#" method="post">
+                  <div class="cart-plus-minus">
+                    <label for="qty"><%= t(".quantity") %></label>
+                    <div class="numbers-row">
+                      <div onClick="dec_quality()" class="dec qtybutton">
+                        <i class="fa fa-minus">&nbsp;</i>
+                      </div>
+                      <input type="number" class="qty" title="Qty" value="1"
+                        max="<%= @product.quality %>" min="1" id="qty" name="qty">
+                      <div onClick="inc_quality(<%= @product.quality %>)" class="inc qtybutton">
+                        <i class="fa fa-plus">&nbsp;</i>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="button pro-add-to-cart" title="<%= t("products.add_to_cart") %>" type="button">
+                    <span><i class="fa fa-shopping-cart"></i><%= t("products.add_to_cart") %></span>
+                  </button>
+                </form>
+              </div>
+          </div>
+        </div>
+      </div>
+      <div class="product-overview-tab">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="product-tab-inner">
+                <ul id="product-detail-tab" class="nav nav-tabs product-tabs">
+                  <li class="<%= active_tab :description, "active" %>">
+                    <a href="#description" data-toggle="tab"><%= t ".description" %></a>
+                  </li>
+                  <li class="<%= active_tab :comment, "active" %>">
+                    <a href="#reviews" data-toggle="tab"><%= t ".comment_review" %></a>
+                  </li>
+                </ul>
+                <div id="productTabContent" class="tab-content">
+                  <div class="tab-pane fade <%= active_tab :description, "in active" %>" id="description">
+                    <div class="std">
+                      <p><%= @product.detail %></p>
+                    </div>
+                  </div>
+                  <div id="reviews" class="tab-pane fade <%= active_tab :comment, "in active" %>">
+                    <div class="col-sm-7 col-lg-7 col-md-7">
+                      <%= render "comment" %>
+                    </div>
+                    <div class="col-sm-5 col-lg-5 col-md-5">
+                      <div class="reviews-content-right">
+                        <h2><%= t ".rate_question" %></h2>
+                        <form>
+                          <div class="form-area">
+                            <div class="table-responsive reviews-table">
+                              <table>
+                                <tbody>
+                                  <tr>
+                                    <th><%= t ".stars", number: 1 %></th>
+                                    <th><%= t ".stars", number: 2 %></th>
+                                    <th><%= t ".stars", number: 3 %></th>
+                                    <th><%= t ".stars", number: 4 %></th>
+                                    <th><%= t ".stars", number: 5 %></th>
+                                  </tr>
+                                  <tr>
+                                    <td><input type="radio"></td>
+                                    <td><input type="radio"></td>
+                                    <td><input type="radio"></td>
+                                    <td><input type="radio"></td>
+                                    <td><input type="radio"></td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                          <div class="buttons-set">
+                            <button class="button submit" title="<%= t ".rating_label" %>" type="submit">
+                              <span><i class="fa fa-thumbs-up"></i><%= t ".rating_label" %></span>
+                            </button>
+                          </div>
+                        </form>
+                        <h2><%= t ".comment_form_h2" %></h2>
+                        <form>
+                          <div class="form-area">
+                            <div class="form-element">
+                              <label><%= t ".comment_label" %> <em>*</em></label>
+                              <textarea></textarea>
+                            </div>
+                            <div class="buttons-set">
+                              <button class="button submit" title="<%= t ".comment_label" %>" type="submit">
+                                <span><i class="fa fa-thumbs-up"></i> &nbsp;<%= t ".comment_label" %></span>
+                              </button>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

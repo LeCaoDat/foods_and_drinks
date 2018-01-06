@@ -8110,7 +8110,7 @@ ul#cart-sidebar {
 /*Register account*/
 .box-authentication .abc{
   width: 8%;
-  font-size: 13px
+  font-size: 13px;
   color: 39342e;
   font-weight: 400;
   line-height: 200px;
@@ -8467,4 +8467,7 @@ ul.products-grid {
   color: #fff;
   border: 1px #fdae03 solid;
   transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
+}
+.quick_view_popup-wrap{
+  display: block;
 }

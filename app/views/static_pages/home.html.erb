@@ -1,1 +1,37 @@
-<%= render "category_area" %>
+<% provide :title, t(".home_title") %>
+<div class="main-container col1-layout">
+  <div class="container">
+    <div class="row">
+      <div class="col-main col-sm-12 col-xs-12">
+        <div class="shop-inner">
+          <div class="page-title">
+            <h2><%= t ".food_category" %></h2>
+          </div>
+          <div class="product-grid-area">
+            <ul class="products-grid" id="list-food">
+              <%= render "list_food" %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="main-container col2-right-layout">
+  <div class="container">
+    <div class="row">
+      <div class="col-main col-sm-12 col-xs-12">
+        <div class="shop-inner">
+          <div class="page-title">
+            <h2><%= t ".drink_category" %></h2>
+          </div>
+          <div class="product-grid-area">
+            <ul class="products-grid" id="list-drink">
+              <%= render "list_drink" %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -9,13 +9,32 @@ jQuery(document).ready(function() {
     startheight:790,
     hideThumbs:10,
 
-    navigationType:"bullet",
-    navigationStyle:"preview1",
+    navigationType:'bullet',
+    navigationStyle:'preview1',
 
-    hideArrowsOnMobile:"on",
+    hideArrowsOnMobile:'on',
 
-    touchenabled:"on",
-    onHoverStop:"on",
-    spinner:"spinner4"
+    touchenabled:'on',
+    onHoverStop:'on',
+    spinner:'spinner4'
   });
+});
+function dec_quality(){
+  var result = document.getElementById('qty');
+  var qty = result.value;
+  if(!isNaN( qty ) && qty > 1) result.value--;
+  return false;
+};
+function inc_quality(quality){
+  var result = document.getElementById('qty');
+  var qty = result.value;
+  if( !isNaN( qty ) && qty < quality) result.value++;
+  return false;
+}
+function close_popup(){
+  document.getElementById('quick_view_popup-overlay').style.display = 'none';
+  document.getElementById('quick_view_popup-wrap').style.display = 'none';
+}
+$(function(){
+   $('.pagination-area a').attr('data-remote', 'true')
 });

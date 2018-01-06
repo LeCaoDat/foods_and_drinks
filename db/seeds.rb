@@ -29,7 +29,39 @@ categories = Category.all
 10.times do
   price = 10000
   quality = 10
-  categories.each{|category| category.products.create!(name: Faker::Name.name, detail: Faker::Name.name, price: price, quality: quality)}
+  categories.each{|category| category.products.create!(name: Faker::Name.name, detail: Faker::Lorem.sentence(20), price: price, quality: quality)}
 end
 
+users = User.take(5)
+3.times do |n|
+  users.each do |user|
+    user.orders.create!(status: false, total: 0)
+  end
+end
 
+orders = Order.all
+products = Product.take(2)
+orders.each do |order|
+  2.times do |n|
+    products.each do |product|
+      order_detail = order.order_details.new quality: 2
+      product.order_details << order_detail
+      total = order.total + order_detail.quality * product.price
+      order.update_attribute :total, total
+    end
+  end
+end
+
+users.each do |user|
+  products.each do |product|
+    rating = user.ratings.new rate:4
+    product.ratings << rating
+  end
+end
+
+users.each do |user|
+  products.each do |product|
+    comment = user.comments.new content: Faker::Lorem.sentence(5)
+    product.comments << comment
+  end
+end
