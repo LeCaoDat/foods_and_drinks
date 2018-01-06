@@ -3,7 +3,12 @@ class SessionsController < ApplicationController
 
   def create
     user = User.find_by email: params[:session][:email].downcase
-    remember_login user
+    if user && (user.authenticate params[:session][:password])
+      check_activated user
+    else
+      flash.now[:danger] = t ".danger_failed"
+      render :new
+    end
   end
 
   def destroy
@@ -13,14 +18,20 @@ class SessionsController < ApplicationController
 
   private
 
-  def remember_login user
-    if user && user.authenticate(params[:session][:password])
+  def check_remember user
+    params[:session][:remember_me] == Settings.sessions_controller.checked ? remember(user) : forget(user)
+  end
+
+  def check_activated user
+    if user.activated?
       log_in user
-      params[:session][:remember_me] == Settings.sessions_controller.checked ? remember(user) : forget(user)
+      check_remember user
       redirect_back_or user
     else
-      flash.now[:danger] = t ".danger_failed"
-      render :new
+      message = t ".account_actived"
+      message +=  t "check_mail"
+      flash[:warning] = message
+      redirect_to root_url
     end
   end
 end
