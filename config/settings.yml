@@ -13,3 +13,9 @@ user_models:
   max_length_email: 255
   min_length_password: 6
   time_expired: 2
+sessions_controller:
+  checked: "1"
+up_edit:
+  boy: 1
+  girl: 0
+
