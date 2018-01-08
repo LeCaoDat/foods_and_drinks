@@ -8,3 +8,8 @@ products:
   star_min: 1
   star_max: 5
   out_of_stock: 0
+user_models:
+  max_length_name: 50
+  max_length_email: 255
+  min_length_password: 6
+  time_expired: 2

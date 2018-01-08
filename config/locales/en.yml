@@ -55,5 +55,25 @@ en:
       button_submit: "Comment"
       no_comment: "No comment"
       stars: "%{number} stars"
-    users:
-      anonymous: "Anonymous"
+  users:
+    anonymous: "Anonymous"
+    create:
+      success_signup: "Welcome to Foods and Drinks!"
+      failed_signup: "Sign up failed "
+    show:
+      error_sign_up: "User not found"
+    new:
+      signup: "Sign up"
+      create_account: "Create your very own account"
+      signup_able: "Sign up today and you will be able to :"
+      li_speed: "Speed your way through checkout"
+      li_track: "Track your orders easily"
+      li_keep: "Keep a record of all your purchases"
+  shared:
+    error_messages:
+      error_content: "The form contains"
+      error: "error"
+  up_user:
+    up_edit:
+      submit: "Create my account"
+      confirm: "Password confirmation"
