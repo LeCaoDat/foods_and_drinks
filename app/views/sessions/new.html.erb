@@ -6,13 +6,14 @@
           <h4><%= t ".login" %></h4>
           <p class="before-login-text"><%= t ".signin_account" %></p>
           <%= form_for :session, url: login_path do |f| %>
-            <%= f.label :email %><span class="required">*</span>
+            <%= f.label :email %>
             <%= f.email_field :email, class: "form-control" %>
-            <%= f.label :password %><span class="required">*</span>
+            <%= f.label :password %>
             <%= f.password_field :password, class: "form-control" %>
-            <label class="inline" for="rememberme">
-              <input type="checkbox" value="forever" id="rememberme" name="rememberme"><%= t ".remember" %>
-            </label>
+            <%= f.label :remember_me, class: " inline" do %>
+              <%= f.check_box :remember_me %>
+              <span><%= t ".remember" %></span>
+            <% end %>
             <%= f.submit t(".submit"), class: "button" %>
             <p class="forgot-pass">
               <a href="#"><%= t ".lost_password" %></a>

@@ -8487,3 +8487,9 @@ ul.products-grid {
 .quick_view_popup-wrap{
   display: block;
 }
+.gender{
+	width: 5% !important;
+}
+.bg{
+	margin-left: 70px;
+}

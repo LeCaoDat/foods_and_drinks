@@ -6,8 +6,12 @@ en:
       wellcome_msg: "Welcome to Foods and Drinks!"
       call_us: "Call Us: +123.456.789"
       my_account: "My Account"
+      history_order: "Hictory Orders"
+      setting: "Settings"
       sign_in: "Sign In"
       login: "login"
+      log_out: "Log Out"
+      sign_up: "Sign Up"
       logo: "Logo"
       recently_added_item: "Recently added item(s)"
       cart: "Cart"
@@ -77,6 +81,10 @@ en:
     error_messages:
       error_content: "The form contains"
       error: "error"
+  up_user:
+    up_edit:
+      submit: "Create my account"
+      confirm: "Password confirmation"
   sessions:
     create:
       danger_failed: "Invalid email/password combination"
