@@ -1,8 +1,8 @@
 /* <![CDATA[ */
 var mega_menu = '0';
 /* ]]> */
-jQuery(document).ready(function() {
-  jQuery('.tp-banner').revolution(
+$(document).ready(function() {
+  $('.tp-banner').revolution(
   {
     delay:9000,
     startwidth:1920,
@@ -18,6 +18,7 @@ jQuery(document).ready(function() {
     onHoverStop:'on',
     spinner:'spinner4'
   });
+  $('.pagination a').attr('data-remote', 'true');
 });
 function dec_quality(){
   var result = document.getElementById('qty');
@@ -35,6 +36,3 @@ function close_popup(){
   document.getElementById('quick_view_popup-overlay').style.display = 'none';
   document.getElementById('quick_view_popup-wrap').style.display = 'none';
 }
-$(function(){
-   $('.pagination-area a').attr('data-remote', 'true')
-});
