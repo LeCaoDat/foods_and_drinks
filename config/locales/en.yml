@@ -1,6 +1,8 @@
 en:
   base_title: "Foods And Drinks"
   close_popup: "Close"
+  account_activation: "Account activation"
+  password_reset: "Password reset"
   layouts:
     header:
       wellcome_msg: "Welcome to Foods and Drinks!"
@@ -74,6 +76,7 @@ en:
     create:
       success_signup: "Welcome to Foods and Drinks!"
       failed_signup: "Sign up failed "
+      check_ymail: "Please check your email to activate your account."
     show:
       error_sign_up: "User not found"
     new:
@@ -97,13 +100,15 @@ en:
   sessions:
     create:
       danger_failed: "Invalid email/password combination"
+      account_actived: "Account not activated. "
+      check_mail: "Check your email for the activation link."
     new:
       login: "Login"
       signin_account: "Welcome back! Sign in to your account"
       remember: "Remember me"
       submit: "Log in"
       lost_password: "Lost your password?"
-      create_account: "Create your very own account"
+      create_account: "Create your very own account!!!"
   up_user:
     up_edit:
       submit: "Create my account"
@@ -131,3 +136,37 @@ en:
     create:
       comment_success: "Comment success"
       comment_faild: "Comment faild"
+  password_resets:
+    new:
+      submit: "Submit"
+      forget: "Forgot password"
+    create:
+      email_sent: "Email sent with password reset instructions"
+      email_found: "Email address not found"
+    edit:
+      update: "Update password"
+      confirm: "Password confirmation"
+    update:
+      no_add : "can't be empty"
+      success: "Password has been reset."
+    check_expiration:
+      expired : "Password reset has expired."
+    load_user:
+      email_not_found : "Email address not found"
+  user_mailer:
+    account_activation:
+      h1: "Foods and Drinks"
+      hi: "Hi"
+      p: "Welcome to the Foods and Drinks Click on the link below to activate your account:"
+      activate: "Activate"
+    password_reset:
+      h1: "Password reset"
+      p1_htm: "To reset your password click the link below:"
+      link: "Reset password"
+      p2_htm: "This link will expire in two hours."
+      p3_htm: "If you did not request your password to be reset, please ignore this email and
+your password will stay as it is."
+  accounts_activation:
+    edit:
+      success_account: "Account activated!"
+      advalid_link: "Invalid activation link"

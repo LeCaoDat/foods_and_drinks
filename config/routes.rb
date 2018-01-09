@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   resources :products
   resources :ratings, only: [:create]
   resources :comments, only: [:create]
+  resources :account_activations, only: :edit
+  resources :password_resets, except: %i(index show destroy)
 end

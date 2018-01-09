@@ -13,9 +13,9 @@
   <%= f.label :address %>
   <%= f.text_field :address, class: "form-control", required: true %>
   <%= f.label :gender %>
-  <%= f.label :boy, class: "bg" %>
-  <%= f.radio_button :gender, Settings.up_edit.boy, class: "gender" %>
-  <%= f.label :girl, class: "bg" %>
-  <%= f.radio_button :gender, Settings.up_edit.girl, class: "gender"%>
+  <%= f.label :male, class: "bg" %>
+  <%= f.radio_button :gender, Settings.up_edit.male, class: "gender" %>
+  <%= f.label :female, class: "bg" %>
+  <%= f.radio_button :gender, Settings.up_edit.female, class: "gender"%>
   <%= f.submit t(".submit"), class: "button" %>
 <% end %>
