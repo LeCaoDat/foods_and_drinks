@@ -78,7 +78,7 @@ ActiveRecord::Schema.define(version: 20180109031222) do
     t.bigint "category_id"
     t.string "product_name"
     t.string "detail"
-    t.boolean "status"
+    t.boolean "status", default: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["category_id"], name: "index_suggests_on_category_id"

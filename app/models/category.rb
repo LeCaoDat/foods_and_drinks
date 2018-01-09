@@ -16,7 +16,7 @@ class Category < ApplicationRecord
     children_array.flatten
   end
 
-  def all_children symbol =  I18n.t("categories.level"), level = 0
+  def all_children symbol = I18n.t("categories.level"), level = 0
     children_array = []
     level += 1
     childs.all.find_each do |child|

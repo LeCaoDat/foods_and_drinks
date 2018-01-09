@@ -225,6 +225,16 @@ en:
       success_delete: "Deleted sucess"
     update:
       invalid_quality: "Invalid quality"
+    destroy:
+      success_delete: "Deleted sucess"
+  suggests:
+    new:
+      suggest_us: "Suggests for Us"
+      write_suggest: "Write a suggest"
+      send_suggest: "Send Suggest"
+    create:
+      suggest_success: "Suggested success"
+      suggest_fail: "Suggested fail"
   admin:
     layouts:
       dashboard: "Dashboard"

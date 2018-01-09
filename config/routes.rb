@@ -14,6 +14,7 @@ Rails.application.routes.draw do
   resources :password_resets, except: %i(index show destroy)
   resources :order_details, only: :show
   resources :order_details
+  resources :suggests, only: %i(new create)
   resource :cart, except: %i(index new edit)
   namespace :admin do
     root "static_pages#index"

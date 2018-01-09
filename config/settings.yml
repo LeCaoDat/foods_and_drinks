@@ -30,6 +30,9 @@ orders:
   number_of_orders: 5
 comments:
   max_length_content: 255
+suggests:
+  max_length_name: 50
+  max_length_detail: 255
 admin:
   categories:
     number_of_categories: 10
