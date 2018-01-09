@@ -320,6 +320,24 @@ en:
         manage_products_title: "Manage Products"
         list_product: "List product"
         add_new: "Add new"
+      edit:
+        update_product_title: "Update Products"
+      destroy:
+        delete_success: "Delete success"
+        delete_failed: "Delete failed"
+        confirm: "Are you sure?"
+      new:
+        new_product_title: "New Product"
+      create:
+        add_success: "Add success"
+        add_failed: "Add failed"
+      product_form:
+        name_place_holder: "Input product name"
+        detail_place_holder: "Input product detail"
+        price_place_holder: "Input product price"
+        quality_place_holder: "Input product quality"
+        category: "Category"
+        button_submit: "Save"
     users:
       not_found_user: "Not found user"
       index:
@@ -334,26 +352,13 @@ en:
         actived: "Activated"
         name_email: "name,email"
       destroy:
+        admin: "Can't delete admin"
         delete_success: "Delete success"
         delete_failed: "Delete failed"
         confirm: "Are you sure?"
-      edit:
-        update_product_title: "Update Products"
       update:
         update_success: "Update success"
         update_failed: "Update failed"
-      new:
-        new_product_title: "New Product"
-      create:
-        add_success: "Add success"
-        add_failed: "Add failed"
-      product_form:
-        name_place_holder: "Input product name"
-        detail_place_holder: "Input product detail"
-        price_place_holder: "Input product price"
-        quality_place_holder: "Input product quality"
-        category: "Category"
-        button_submit: "Save"
       gender:
         male: "Male"
         female: "Female"
@@ -396,3 +401,24 @@ en:
         accept: "Accept"
         reject: "Reject"
         pending: "Pending"
+    suggests:
+      not_valid_parent: "Not valid parent"
+      not_found_category: "Not found suggest"
+      can_not_delete: "Can not delete root suggest"
+      index:
+        id: "id"
+        id_name: "Id User"
+        id_category: "Id Category"
+        detail: "Detail"
+        status: "Status"
+        function: "Function"
+        manage_suggests_title: "Manage suggests"
+        list_suggest: "List suggest"
+        add_new: "Add new"
+      destroy:
+        delete_success: "Delete success"
+        delete_failed: "Delete failed"
+        confirm: "Are you sure?"
+      update:
+        success: "Change success"
+        failed: "Change fail"

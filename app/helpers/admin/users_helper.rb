@@ -5,7 +5,7 @@ module Admin
         content_tag :td, t(".male")
       elsif user.gender == false
         content_tag :td, t(".female")
-      elsif user.gender == nil
+      elsif user.gender.nil?
         content_tag :td, t(".none")
       end
     end
