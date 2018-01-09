@@ -206,6 +206,7 @@ en:
       total_label: "Total"
   carts:
     shopping_title: "Shopping cart"
+    confirm: "Are you sure?"
     shopping_cart:
       product: "Product"
       name: "Name"
@@ -307,6 +308,20 @@ en:
         manage_products_title: "Manage Products"
         list_product: "List product"
         add_new: "Add new"
+    users:
+      not_found_user: "Not found user"
+
+      index:
+        manage_users_title: "Manage users"
+        list_user: "List user"
+        id: "id"
+        name: "Name"
+        gender: "Gender"
+        address: "Address"
+        phone: "Phone"
+        email: "Email"
+        actived: "Activated"
+        name_email: "name,email"
       destroy:
         delete_success: "Delete success"
         delete_failed: "Delete failed"
@@ -328,3 +343,7 @@ en:
         quality_place_holder: "Input product quality"
         category: "Category"
         button_submit: "Save"
+      gender:
+        male: "Male"
+        female: "Female"
+        none: "None"

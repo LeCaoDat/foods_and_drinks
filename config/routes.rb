@@ -20,5 +20,6 @@ Rails.application.routes.draw do
     root "static_pages#index"
     resources :categories, except: :show
     resources :products, except: :show
+    resources :users, only: %i(index destroy)
   end
 end
