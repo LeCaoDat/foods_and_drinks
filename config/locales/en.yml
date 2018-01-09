@@ -41,6 +41,7 @@ en:
       food_category: "Food"
       drink_category: "Drink"
   products:
+    had_been_rating: "You have rated this product"
     price_label: "Price"
     price: "$ %{price}"
     add_to_cart: "Add to Cart"
@@ -55,15 +56,21 @@ en:
       description: "Description"
       comment_review: "Comment and Rating"
       comments: "Comments"
+      no_comment: "No comment"
+    rating_form:
       rate_question: "How do you rate this product?"
       rating_label: "Rate"
+      stars: "%{number} stars"
+      invalid_rate: "Invalid rating value"
+    comment_form:
       comment_form_h2: "Write Your Own Review"
       comment_label: "Comment"
       button_submit: "Comment"
-      no_comment: "No comment"
-      stars: "%{number} stars"
+    comment:
+      comment_list_title: "Comment"
   users:
     anonymous: "Anonymous"
+    please_log_in: "Please log in."
     create:
       success_signup: "Welcome to Foods and Drinks!"
       failed_signup: "Sign up failed "
@@ -116,3 +123,11 @@ en:
       all_product: "All product"
   categories:
     level: "&nbsp;&nbsp;&nbsp;"
+  ratings:
+    create:
+      rating_success: "Rating success"
+      rating_faild: "Rating faild"
+  comments:
+    create:
+      comment_success: "Comment success"
+      comment_faild: "Comment faild"

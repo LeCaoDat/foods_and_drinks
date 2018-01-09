@@ -1,0 +1,35 @@
+<h2><%= t ".rate_question" %></h2>
+<%= form_for @rating do |f| %>
+  <%= render "shared/error_messages", object: f.object %>
+  <div class="form-area">
+    <div class="table-responsive reviews-table">
+      <table>
+        <tbody>
+          <tr>
+            <th><%= t ".stars", number: 1 %></th>
+            <th><%= t ".stars", number: 2 %></th>
+            <th><%= t ".stars", number: 3 %></th>
+            <th><%= t ".stars", number: 4 %></th>
+            <th><%= t ".stars", number: 5 %></th>
+          </tr>
+          <tr>
+            <td><%= f.radio_button :rate, "1" %></td>
+            <td><%= f.radio_button :rate, "2" %></td>
+            <td><%= f.radio_button :rate, "3" %></td>
+            <td><%= f.radio_button :rate, "4" %></td>
+            <td><%= f.radio_button :rate, "5" %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="buttons-set">
+    <%= f.button type: "submit", title: t(".rating_label"), class: "button submit", name: nil do %>
+      <%= content_tag :span, "" do %>
+        <%= content_tag :i, "", class: "fa fa-thumbs-up"%>
+        <%= t ".rating_label" %>
+      <% end %>
+    <% end %>
+  </div>
+  <%= hidden_field_tag :product_id, @rating.product_id %>
+<% end %>
