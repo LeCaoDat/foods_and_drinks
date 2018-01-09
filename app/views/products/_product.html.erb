@@ -9,7 +9,7 @@
             <% end %>
           </figure>
           <button type="button" class="add-to-cart-mt">
-            <%= link_to "" do %>
+            <%= link_to cart_path(product_id: product.id, quality: Settings.products.min_quality), method: :post do %>
               <i class="fa fa-shopping-cart"></i>
               <span><%= t "products.add_to_cart" %></span>
             <% end %>

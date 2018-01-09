@@ -7,12 +7,14 @@ Rails.application.routes.draw do
   get "/search", to: "filters#show"
   get "/orders", to: "orders#index"
   resources :users, except: %i(index destroy)
-  resources :products
-  resources :ratings, only: [:create]
-  resources :comments, only: [:create]
+  resources :products, only: :show
+  resources :ratings, only: :create
+  resources :comments, only: :create
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(index show destroy)
-  resources :order_details, only: [:show]
+  resources :order_details, only: :show
+  resources :order_details
+  resource :cart, except: %i(index new edit)
   namespace :admin do
     root "static_pages#index"
     resources :categories, except: %i(show)

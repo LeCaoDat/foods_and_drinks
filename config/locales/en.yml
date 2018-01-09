@@ -3,6 +3,7 @@ en:
   close_popup: "Close"
   account_activation: "Account activation"
   password_reset: "Password reset"
+  error_sign_up: "User not found"
   layouts:
     header:
       wellcome_msg: "Welcome to Foods and Drinks!"
@@ -78,7 +79,6 @@ en:
       failed_signup: "Sign up failed "
       check_ymail: "Please check your email to activate your account."
     show:
-      error_sign_up: "User not found"
       your_profile: "My Profile"
       update: "(Update Profile)"
       male: "Male"
@@ -95,12 +95,10 @@ en:
       submit: "Create my account"
       confirm: "Password confirmation"
     edit:
-      error_sign_up: "User not found"
       update: "Update My Profile"
       edit_user: "Edit user"
       please_login: "Please log in."
     update:
-      error_sign_up: "User not found"
       profile_updated: "Profile updated"
   shared:
     error_messages:
@@ -204,6 +202,27 @@ en:
       unit_price_label: "Unit Price"
       quality_label: "Quality"
       total_label: "Total"
+  carts:
+    shopping_title: "Shopping cart"
+    shopping_cart:
+      product: "Product"
+      name: "Name"
+      price: "Price"
+      quality: "Quality"
+      total_label: "Total"
+      total: "$ %{price}"
+      checkout: "Checkout"
+    order_cart:
+      apply: "Apply"
+    update:
+      out_of_stock: "Out of stock"
+    create:
+      success_add: "Added success"
+      invalid_quality: "Invalid quality"
+    destroy:
+      success_delete: "Deleted sucess"
+    update:
+      invalid_quality: "Invalid quality"
   admin:
     layouts:
       dashboard: "Dashboard"

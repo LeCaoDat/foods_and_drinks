@@ -1,0 +1,35 @@
+<tr>
+  <td class="cart_product">
+    <%= link_to order_detail.product do %>
+      <%= image_tag order_detail.product_picture.url %>
+    <% end %>
+  </td>
+  <td class="cart_description">
+    <p class="product-name">
+      <%= link_to order_detail.product do %>
+        <%= order_detail.product_name %>
+      <% end %>
+    </p>
+  </td>
+  <td class="price"><span><%= order_detail.product_price %></span></td>
+  <td class="qty">
+    <%= form_tag cart_path(product_id: order_detail.product_id), method: :patch do %>
+      <%= number_field_tag :quality, nil, class: "form-control input-sm",
+        min: Settings.products.min_quality, max: order_detail.product_quality,
+        value: order_detail.quality %> <br />
+      <%= button_tag type: "submit", class: "btn", name: nil do %>
+        <%= content_tag :span, t(".apply") %>
+      <% end %>
+    <% end %>
+  </td>
+  <td class="price">
+    <span>
+      <%= calc_price order_detail.product_price, order_detail.quality %>
+    </span>
+  </td>
+  <td class="action">
+    <%= link_to cart_path(product_id: order_detail.product_id), method: :delete do %>
+      <%= content_tag :i, "", class: "icon-close" %>
+    <% end %>
+  </td>
+</tr>

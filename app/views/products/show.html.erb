@@ -33,24 +33,26 @@
                 </p>
               </div>
               <div class="product-variation">
-                <form action="#" method="post">
+                <%= form_tag cart_path(product_id: @product.id), method: :post do %>
                   <div class="cart-plus-minus">
                     <label for="qty"><%= t(".quantity") %></label>
                     <div class="numbers-row">
                       <div onClick="dec_quality()" class="dec qtybutton">
                         <i class="fa fa-minus">&nbsp;</i>
                       </div>
-                      <input type="number" class="qty" title="Qty" value="1"
-                        max="<%= @product.quality %>" min="1" id="qty" name="qty">
+                      <%= number_field_tag :quality, nil, class: "qty",
+                        value: Settings.products.min_quality, min: Settings.products.min_quality,
+                        max: @product.quality %>
                       <div onClick="inc_quality(<%= @product.quality %>)" class="inc qtybutton">
                         <i class="fa fa-plus">&nbsp;</i>
                       </div>
                     </div>
                   </div>
-                  <button class="button pro-add-to-cart" title="<%= t("products.add_to_cart") %>" type="button">
+                  <%= button_tag type: "submit", class: "button pro-add-to-cart",
+                  title: t("products.add_to_cart"), name: nil do %>
                     <span><i class="fa fa-shopping-cart"></i><%= t("products.add_to_cart") %></span>
-                  </button>
-                </form>
+                  <% end %>
+                <% end %>
               </div>
           </div>
         </div>

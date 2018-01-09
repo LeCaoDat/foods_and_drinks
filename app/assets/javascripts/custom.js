@@ -21,13 +21,13 @@ $(document).ready(function() {
   $('.pagination a').attr('data-remote', 'true');
 });
 function dec_quality(){
-  var result = document.getElementById('qty');
+  var result = document.getElementById('quality');
   var qty = result.value;
   if(!isNaN( qty ) && qty > 1) result.value--;
   return false;
 };
 function inc_quality(quality){
-  var result = document.getElementById('qty');
+  var result = document.getElementById('quality');
   var qty = result.value;
   if( !isNaN( qty ) && qty < quality) result.value++;
   return false;

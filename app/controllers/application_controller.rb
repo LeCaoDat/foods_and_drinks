@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include StaticPagesHelper
   include SessionsHelper
   include FiltersHelper
+  helper_method :current_order
 
   def logged_in_user
     return if logged_in?
@@ -18,5 +19,9 @@ class ApplicationController < ActionController::Base
 
   def admin_user
     redirect_to root_url unless current_user.is_admin?
+  end
+
+  def current_order
+    session[:shopping_cart] ||= []
   end
 end

@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20180109031222) do
 
   create_table "orders", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.bigint "user_id"
-    t.float "total", limit: 24
+    t.float "total", limit: 24, default: 0.0
     t.boolean "status"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
