@@ -1,0 +1,33 @@
+<section class="main-container col2-right-layout">
+  <div class="main container">
+    <div class="row">
+      <div class="col-main col-sm-12 col-xs-12">
+        <div class="my-account">
+          <div class="page-title">
+            <h2><%= t ".history_orders" %></h2>
+          </div>
+          <div class="wishlist-item table-responsive">
+            <table class="col-md-12">
+              <thead>
+                <tr>
+                  <th class="th-product"><%= t ".image_label" %></th>
+                  <th class="th-details"><%= t ".product_name_label" %></th>
+                  <th class="th-price"><%= t ".unit_price_label" %></th>
+                  <th class="th-quality"><%= t ".quality_label" %></th>
+                  <th class="th-price"><%= t ".total_label" %></th>
+                </tr>
+              </thead>
+              <tbody id="list-order">
+                <% if @order_details && @order_details.any? %>
+                  <%= render @order_details %>
+                <% else %>
+                  <tr><td colspan="4"><h5><%= t ".no_order" %></h5></td></tr>
+                <% end %>
+              </tbody>
+            </table>
+            <%= will_paginate @order_details, previous_label: "<", next_label: ">" %>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

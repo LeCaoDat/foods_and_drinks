@@ -183,3 +183,23 @@ en:
     edit:
       success_account: "Account activated!"
       advalid_link: "Invalid activation link"
+  orders:
+    not_found_order: "Not found order"
+    order:
+      total_price: "$ %{price}"
+    index:
+      history_orders: "History orders"
+      no_label: "No."
+      ordered_date_label: "Ordered date"
+      total_price_label: "Total price"
+      detail_label: "Detail"
+      no_order: "No order"
+  order_details:
+    order_detail:
+      price: "$ %{price}"
+    show:
+      image_label: "Image"
+      product_name_label: "Product Name"
+      unit_price_label: "Unit Price"
+      quality_label: "Quality"
+      total_label: "Total"

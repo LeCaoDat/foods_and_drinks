@@ -21,3 +21,7 @@ up_edit:
   female: 0
 filters:
   number_of_products: 8
+orders:
+  number_of_orders: 5
+comments:
+  max_length_content: 255
