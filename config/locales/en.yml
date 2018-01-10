@@ -203,3 +203,23 @@ en:
       unit_price_label: "Unit Price"
       quality_label: "Quality"
       total_label: "Total"
+  admin:
+    layouts:
+      dashboard: "Dashboard"
+      manage_users: "Manage Users"
+      manage_categories: "Manage Categories"
+      manage_products: "Manage Products"
+      manage_orders: "Manage Orders"
+      manage_suggests: "Manage Suggests"
+      navbar:
+        admin_header: "Admin Page"
+        toggle_navigation: "Toggle navigation"
+        back_to_public_page: "Back to public page"
+        logout: "Logout"
+        import_products: "Import Products"
+        statistic_orders: "Statistic orders"
+        setting: "Setting"
+    static_pages:
+      index:
+        dashboard_admin_title: "Dashboard Admin"
+        goto: "Go to"

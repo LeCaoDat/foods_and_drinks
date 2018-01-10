@@ -14,7 +14,7 @@
 //= require bootstrap-sprockets
 //= require rails-ujs
 //= require turbolinks
-//= require_tree .
+//= require custom.js
 //= require javascripts/owl.carousel.min.js
 //= require javascripts/jquery.bxslider.js
 //= require javascripts/revolution-slider.js
