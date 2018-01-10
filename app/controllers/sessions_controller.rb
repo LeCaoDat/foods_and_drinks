@@ -26,10 +26,10 @@ class SessionsController < ApplicationController
     if user.activated?
       log_in user
       check_remember user
-      redirect_back_or user
+      redirect_back_or root_url
     else
       message = t ".account_actived"
-      message +=  t "check_mail"
+      message +=  t ".check_mail"
       flash[:warning] = message
       redirect_to root_url
     end

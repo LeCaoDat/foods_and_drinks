@@ -8488,8 +8488,11 @@ ul.products-grid {
   display: block;
 }
 .gender{
-	width: 5% !important;
+  width: 5% !important;
 }
 .bg{
-	margin-left: 70px;
+  display: block;
+}
+.pinline{
+  display: block;
 }
