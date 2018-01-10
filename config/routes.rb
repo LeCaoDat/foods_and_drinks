@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   delete "/logout", to: "sessions#destroy"
   get "/search", to: "filters#show"
   get "/orders", to: "orders#index"
-  resources :users, only: %i(new create show)
+  resources :users, except: %i(index destroy)
   resources :products
   resources :ratings, only: [:create]
   resources :comments, only: [:create]

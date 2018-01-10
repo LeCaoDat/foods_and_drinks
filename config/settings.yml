@@ -9,6 +9,7 @@ products:
   star_min: 1
   star_max: 5
   out_of_stock: 0
+  hot_trend_record: 4
 user_models:
   max_length_name: 50
   max_length_email: 255
