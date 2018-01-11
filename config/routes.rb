@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(index show destroy)
   resources :order_details, only: [:show]
+  namespace :admin do
+    root "static_pages#index"
+  end
 end
