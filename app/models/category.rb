@@ -2,7 +2,10 @@ class Category < ApplicationRecord
   has_many :products, dependent: :destroy
   has_many :suggests, dependent: :destroy
   has_many :childs, foreign_key: "parent_id", class_name: Category.name, dependent: :destroy
+  validates :name, presence: true, length: {maximum: Settings.categories.max_length_name}
+  validate :parent_not_found_and_self
   scope :root_categories, ->{where parent_id: Settings.categories.root_id}
+  scope :not_self, ->(id){where("id != ?", id)}
 
   def find_childs_id_to_array
     children_array = []
@@ -22,5 +25,12 @@ class Category < ApplicationRecord
       children_array << child.all_children(level)
     end
     children_array.flatten
+  end
+
+  private
+
+  def parent_not_found_and_self
+    return if (parent_id != id) && (Category.find_by id: parent_id)
+    errors.add(:parent_id, I18n.t("admin.categories.not_valid_parent"))
   end
 end

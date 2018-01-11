@@ -3,7 +3,6 @@ class ApplicationController < ActionController::Base
   include StaticPagesHelper
   include SessionsHelper
   include FiltersHelper
-  include SessionsHelper
 
   def logged_in_user
     return if logged_in?
@@ -15,5 +14,9 @@ class ApplicationController < ActionController::Base
   def correct_user
     @user = User.find_by id: params[:id]
     redirect_to(root_url) unless current_user?(@user)
+  end
+
+  def admin_user
+    redirect_to root_url unless current_user.is_admin?
   end
 end

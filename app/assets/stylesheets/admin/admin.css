@@ -1,4 +1,5 @@
 /*
+*= require "stylesheets/quick_view_popup.css"
 *= require_tree .
 *= require_self
 *= require "stylesheets/sb-admin-2.css"

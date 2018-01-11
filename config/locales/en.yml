@@ -23,6 +23,7 @@ en:
       price: "$ %{price}"
       checkout: "Checkout"
       view_cart: "View Cart"
+      dashboard_admin: "Dashboard Admin"
     mobile_menu:
       home: "Home"
       suggest: "Suggest"
@@ -103,7 +104,7 @@ en:
       profile_updated: "Profile updated"
   shared:
     error_messages:
-      error_content: "The form contains"
+      error_content: "The form contains "
       error: "error"
   up_user:
     up_edit:
@@ -223,3 +224,37 @@ en:
       index:
         dashboard_admin_title: "Dashboard Admin"
         goto: "Go to"
+        manage_users: "Manage Users"
+        manage_products: "Manage Products"
+        manage_orders: "Manage Orders"
+    categories:
+      not_valid_parent: "Not valid parent"
+      not_found_category: "Not found category"
+      can_not_delete: "Can not delete root category"
+      index:
+        id: "id"
+        name: "Name"
+        parent_id: "Parent Id"
+        created_at: "Created At"
+        updated_at: "Updated At"
+        function: "Function"
+        manage_categories_title: "Manage categories"
+        list_category: "List category"
+        add_new: "Add new"
+      destroy:
+        delete_success: "Delete success"
+        delete_failed: "Delete failed"
+        confirm: "Are you sure?"
+      edit:
+        update_category_title: "Update Category"
+      update:
+        update_success: "Update Success"
+      new:
+        new_category_title: "New Category"
+      create:
+        add_success: "Add success"
+        add_failed: "Add failed"
+      category_form:
+        name_place_holder: "Input category name"
+        parent: "Parent"
+        button_submit: "Save"

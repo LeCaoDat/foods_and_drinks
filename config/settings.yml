@@ -4,6 +4,7 @@ categories:
   root_id: 0
   food_default_id: 1
   drink_default_id: 2
+  max_length_name: 50
 products:
   number_of_comment: 5
   star_min: 1
@@ -26,3 +27,6 @@ orders:
   number_of_orders: 5
 comments:
   max_length_content: 255
+admin:
+  categories:
+    number_of_categories: 10

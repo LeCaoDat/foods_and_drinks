@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default navbar-static-top" id="mainNav" role="navigation" style="margin-bottom: 0">
+<nav class="navbar navbar-default" id="mainNav" role="navigation" style="margin-bottom: 0">
   <div class="navbar-header">
     <%= link_to  t(".admin_header"), admin_root_path, class: "navbar-brand"%>
     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -48,7 +48,7 @@
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right"
           title="<%= t "admin.layouts.manage_categories" %>">
-          <%= link_to "", class: "nav-link" do %>
+          <%= link_to admin_categories_path, class: "nav-link" do %>
             <i class="fa fa-fw fa-support"></i>
             <span class="nav-link-text"><%= t "admin.layouts.manage_categories" %></span>
           <% end %>

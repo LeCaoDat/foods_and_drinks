@@ -15,5 +15,6 @@ Rails.application.routes.draw do
   resources :order_details, only: [:show]
   namespace :admin do
     root "static_pages#index"
+    resources :categories, except: %i(show)
   end
 end

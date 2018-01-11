@@ -8491,8 +8491,8 @@ ul.products-grid {
   width: 5% !important;
 }
 .bg{
-  display: block;
+  display: inline;
 }
 .pinline{
-  display: block;
+  display: inline;
 }

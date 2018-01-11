@@ -5,7 +5,7 @@
       <div class="account-login">
         <div class="box-authentication">
         <div>
-          <h4 style="display: inline;"><%= t ".my_profile" %></h4>
+          <h4 class="pinline"><%= t ".my_profile" %></h4>
           <p class="pinline""><%= link_to t(".update"), edit_user_path(current_user) %></p>
         </div>
           <%= form_for @user do |f| %>
