@@ -14,6 +14,11 @@ class Product < ApplicationRecord
     .group(:id, :name, :price, :quality, :detail, :picture, :category_id, :created_at, :updated_at)
     .having("ROUND(AVG(rate)) = ?", rate)
   end)
+  scope :hot_trend, (lambda do
+    select("products.*").joins(:order_details)
+    .group(:id, :name, :price, :quality, :detail, :picture, :category_id, :created_at, :updated_at)
+    .order("SUM(order_details.quality) DESC").limit Settings.products.hot_trend_record
+  end)
 
   def average_rating
     (result = ratings.average :rate) ? result : 0

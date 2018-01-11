@@ -3,7 +3,7 @@
     <h2 class=""><%= t ".comment_list_title" %></h2>
     <div class="comment-list">
       <ul id="comment_list">
-        <% if @comments && @comments.any? %>
+        <% if @comments.any? %>
           <%= render @comments %>
         <% else %>
           <li>
@@ -15,6 +15,6 @@
       </ul>
     </div>
   </div>
-  <%= will_paginate @comments, class: "pagination-area", remote: true,
-    previous_label: "<", next_label: ">" %>
+  <%= will_paginate @comments, class: "pagination-area",
+    previous_label: "<", next_label: ">" if @comments %>
 </div>

@@ -33,7 +33,6 @@ en:
       home: "Home"
       suggest: "Suggest"
       search: "Search"
-      hot_trend: "Hot trend"
     footer:
       design_by: "Design by DT"
   static_pages:
@@ -157,6 +156,7 @@ en:
       email_sent: "Email sent with password reset instructions"
       email_found: "Email address not found"
     edit:
+      tittle: "Reset password"
       update: "Update password"
       confirm: "Password confirmation"
     update:
