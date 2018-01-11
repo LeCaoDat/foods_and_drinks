@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   resource :cart, except: %i(index new edit)
   namespace :admin do
     root "static_pages#index"
-    resources :categories, except: %i(show)
+    resources :categories, except: :show
+    resources :products, except: :show
   end
 end

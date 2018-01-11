@@ -3,6 +3,11 @@ class Product < ApplicationRecord
   has_many :comments, dependent: :destroy
   has_many :order_details, dependent: :destroy
   has_many :ratings, dependent: :destroy
+  validates :name, presence: true
+  validates :detail, presence: true
+  validates :price, presence: true, numericality: true
+  validates :quality, presence: true, numericality: {only_integer: true}
+  validate :picture_size
   mount_uploader :picture, PictureUploader
   scope :filter_by_alphabet, ->(alpha){where("name LIKE ?", "#{alpha}%") if alpha.present?}
   scope :filter_by_name, ->(name){where("name LIKE ?", "%#{name}%") if name.present?}
@@ -33,5 +38,12 @@ class Product < ApplicationRecord
     result = result.filter_by_max_price params[:max_price] if params[:max_price].present?
     result = result.filter_by_rate params[:rate] if params[:rate].present?
     result
+  end
+
+  private
+
+  def picture_size
+    return unless picture.size > Settings.products.max_size_image_file.megabytes
+    errors.add :picture, I18n.t("admin.products.image_oversize")
   end
 end

@@ -12,6 +12,8 @@ products:
   out_of_stock: 0
   hot_trend_record: 4
   min_quality: 1
+  detail_rows: 5
+  max_size_image_file: 5
 user_models:
   max_length_name: 50
   max_length_email: 255
@@ -31,3 +33,7 @@ comments:
 admin:
   categories:
     number_of_categories: 10
+  products:
+    number_of_products: 10
+    picture_width: 650
+    picture_height: 650
