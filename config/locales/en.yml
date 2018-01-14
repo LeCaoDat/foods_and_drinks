@@ -375,7 +375,7 @@ en:
       index:
         manage_orders_title: "Manager Orders"
         list_order: "List order"
-        id: "Id"
+        rank: "Rank"
         user_email: "User email"
         user_name: "User name"
         total: "Total"
@@ -425,3 +425,11 @@ en:
       update:
         success: "Change success"
         failed: "Change fail"
+    import_products:
+      new:
+        import_product_title: "Import Products"
+      create:
+        import_failed: "Import failed"
+      product_import_form:
+        button_submit: "Submit"
+        file: "File"

@@ -19,8 +19,13 @@ Rails.application.routes.draw do
   namespace :admin do
     root "static_pages#index"
     resources :categories, except: :show
-    resources :products, except: :show
     resources :users, only: %i(index destroy)
+    resources :products, except: :show do
+      collection do
+        get :import, to: "import_products#new"
+        post :import, to: "import_products#create"
+      end
+    end
     resources :orders, only: %i(index update) do
       resources :order_details, only: :index
     end

@@ -25,4 +25,10 @@ class ApplicationController < ActionController::Base
   def current_order
     session[:shopping_cart] ||= []
   end
+
+  def valid_page page
+    page = page.to_i
+    page = Settings.page.default_page if page.zero?
+    page
+  end
 end

@@ -52,3 +52,5 @@ admin:
     number_of_orders: 10
   suggests:
     number_of_suggests: 10
+page:
+  default_page: 1

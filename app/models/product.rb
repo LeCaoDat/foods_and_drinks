@@ -1,3 +1,4 @@
+require "roo"
 class Product < ApplicationRecord
   belongs_to :category
   has_many :comments, dependent: :destroy
@@ -29,15 +30,27 @@ class Product < ApplicationRecord
     (result = ratings.average :rate) ? result : 0
   end
 
-  def self.filter_product params
-    result = Product.all
-    result = result.filter_by_alphabet params[:alpha] if params[:alpha].present?
-    result = result.filter_by_name params[:name] if params[:name].present?
-    result = result.filter_by_category params[:category_id] if params[:category_id].present?
-    result = result.filter_by_min_price params[:min_price] if params[:min_price].present?
-    result = result.filter_by_max_price params[:max_price] if params[:max_price].present?
-    result = result.filter_by_rate params[:rate] if params[:rate].present?
-    result
+  class << self
+    def filter_product params
+      result = Product.all
+      result = result.filter_by_alphabet params[:alpha] if params[:alpha].present?
+      result = result.filter_by_name params[:name] if params[:name].present?
+      result = result.filter_by_category params[:category_id] if params[:category_id].present?
+      result = result.filter_by_min_price params[:min_price] if params[:min_price].present?
+      result = result.filter_by_max_price params[:max_price] if params[:max_price].present?
+      result = result.filter_by_rate params[:rate] if params[:rate].present?
+      result
+    end
+
+    def import file
+      spreadsheet = file
+      header = spreadsheet.row(1)
+      (2..spreadsheet.last_row).each do |i|
+        row = Hash[[header, spreadsheet.row(i)].transpose]
+        product = find_or_initialize_by(id: row["id"])
+        next unless product.update_attributes(row.to_hash)
+      end
+    end
   end
 
   private
