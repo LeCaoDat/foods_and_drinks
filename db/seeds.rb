@@ -37,7 +37,7 @@ end
 users = User.take(5)
 3.times do |n|
   users.each do |user|
-    user.orders.create!(status: false, total: 0)
+    user.orders.create!(total: 0)
   end
 end
 

@@ -4,6 +4,11 @@ en:
   account_activation: "Account activation"
   password_reset: "Password reset"
   error_sign_up: "User not found"
+  order_mailer:
+    user_order:
+      new_order: "New Order"
+      greeting: "Hello %{name}, "
+      message: "I have placed an order No.%{order_id}. Please check for me."
   layouts:
     header:
       wellcome_msg: "Welcome to Foods and Drinks!"
@@ -192,8 +197,14 @@ en:
       no_label: "No."
       ordered_date_label: "Ordered date"
       total_price_label: "Total price"
-      detail_label: "Detail"
+      status_label: "Status"
+      function_label: "Function"
+      detail: "Detail"
+      delete: "Delete"
       no_order: "No order"
+    destroy:
+      delete_success: "Delete Success"
+      delete_failed: "Delete Failed"
   order_details:
     order_detail:
       price: "$ %{price}"
@@ -244,6 +255,7 @@ en:
       manage_products: "Manage Products"
       manage_orders: "Manage Orders"
       manage_suggests: "Manage Suggests"
+      manage_order_details: "Manage Order details"
       navbar:
         admin_header: "Admin Page"
         toggle_navigation: "Toggle navigation"
@@ -310,7 +322,6 @@ en:
         add_new: "Add new"
     users:
       not_found_user: "Not found user"
-
       index:
         manage_users_title: "Manage users"
         list_user: "List user"
@@ -347,3 +358,41 @@ en:
         male: "Male"
         female: "Female"
         none: "None"
+    orders:
+      not_found_order: "Not found order"
+      order:
+        detail: "Detail"
+        accept: "Accept"
+        reject: "Reject"
+      index:
+        manage_orders_title: "Manager Orders"
+        list_order: "List order"
+        id: "Id"
+        user_email: "User email"
+        user_name: "User name"
+        total: "Total"
+        status: "Status"
+        created_at: "Created At"
+        updated_at: "Updated At"
+        function: "Function"
+      update:
+        check_status: "This order already %{status}"
+        update_success: "Update Success"
+        update_failed: "Update Failed"
+    order_details:
+      index:
+        manage_order_details_title: "Manager Order detail"
+        list_order_detail: "List order detail"
+        no_order: "No."
+        picture: "Picture"
+        name: "Product Name"
+        unit_price: "Unit price"
+        quality: "Quality"
+        total: "Total"
+    order_mailer:
+      admin_respon:
+        greeting: "Hello %{name}, "
+        message: "The order No.%{order_id} has been %{status}. Thank you!"
+        accept: "Accept"
+        reject: "Reject"
+        pending: "Pending"
