@@ -8,7 +8,7 @@ en:
     user_order:
       new_order: "New Order"
       greeting: "Hello %{name}, "
-      message: "I have placed an order No.%{order_id}. Please check for me."
+      message: "I have placed an order #%{order_id}. Please check for me."
   layouts:
     header:
       wellcome_msg: "Welcome to Foods and Drinks!"
@@ -202,6 +202,9 @@ en:
       detail: "Detail"
       delete: "Delete"
       no_order: "No order"
+    create:
+      order_success: "Order Success"
+      order_failed: "Order Failed"
     destroy:
       delete_success: "Delete Success"
       delete_failed: "Delete Failed"
@@ -213,7 +216,7 @@ en:
       image_label: "Image"
       product_name_label: "Product Name"
       unit_price_label: "Unit Price"
-      quality_label: "Quality"
+      quality_label: "Quantity"
       total_label: "Total"
   carts:
     shopping_title: "Shopping cart"
@@ -222,7 +225,7 @@ en:
       product: "Product"
       name: "Name"
       price: "Price"
-      quality: "Quality"
+      quality: "Quantity"
       total_label: "Total"
       total: "$ %{price}"
       checkout: "Checkout"
@@ -232,11 +235,11 @@ en:
       out_of_stock: "Out of stock"
     create:
       success_add: "Added success"
-      invalid_quality: "Invalid quality"
+      invalid_quantity: "Invalid quantity"
     destroy:
       success_delete: "Deleted sucess"
     update:
-      invalid_quality: "Invalid quality"
+      invalid_quantity: "Invalid quantity"
     destroy:
       success_delete: "Deleted sucess"
   suggests:
@@ -311,7 +314,7 @@ en:
         id: "id"
         picture: "Picture"
         name: "Name"
-        quality: "Quality"
+        quantity: "Quantity"
         price: "Price"
         category_id: "Category Id"
         created_at: "Created At"
@@ -335,7 +338,7 @@ en:
         name_place_holder: "Input product name"
         detail_place_holder: "Input product detail"
         price_place_holder: "Input product price"
-        quality_place_holder: "Input product quality"
+        quantity_place_holder: "Input product quantity"
         category: "Category"
         button_submit: "Save"
     users:
@@ -392,7 +395,7 @@ en:
         picture: "Picture"
         name: "Product Name"
         unit_price: "Unit price"
-        quality: "Quality"
+        quality: "Quantity"
         total: "Total"
     order_mailer:
       admin_respon:

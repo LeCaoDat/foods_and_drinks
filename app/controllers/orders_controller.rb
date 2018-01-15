@@ -1,10 +1,26 @@
 class OrdersController < ApplicationController
-  before_action :logged_in_user, only: %i(index destroy)
+  before_action :logged_in_user, only: %i(index destroy create)
+  before_action :current_order, only: %i(create)
   before_action :find_order, only: %i(destroy)
 
   def index
     @orders = @current_user.orders.paginate page: params[:page],
       per_page: Settings.orders.number_of_orders
+  end
+
+  def create
+    @order = @current_user.orders.new
+    session[:shopping_cart].each do |item|
+      @order.order_details << @order.order_details.new(item)
+    end
+    if @order.save
+      flash[:success] = t ".order_success"
+      OrderMailer.user_order(@order).deliver_now
+      session[:shopping_cart] = []
+    else
+      flash[:danger] = t ".order_failed"
+    end
+    redirect_to cart_path
   end
 
   def destroy

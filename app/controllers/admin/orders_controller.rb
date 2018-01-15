@@ -10,7 +10,7 @@ module Admin
     def update
       status = params[:status].to_i
       if (check_status status) && (@order.update_attribute :status, status)
-        OrderMailer.admin_respon(@order.user, @order).deliver_now
+        Admin::OrderMailer.admin_respon(@order.user, @order).deliver_now
         flash[:success] = t ".update_success"
       else
         flash[:danger] = t ".update_failed"
@@ -28,16 +28,8 @@ module Admin
     end
 
     def check_status status
-      result =
-        case status
-        when Settings.orders.accept_status
-          true
-        when Settings.orders.reject_status
-          true
-        else
-          false
-        end
-      result
+      array = [Settings.orders.accept_status, Settings.orders.reject_status]
+      true if array.include? status
     end
   end
 end
