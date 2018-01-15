@@ -28,7 +28,8 @@
     </span>
   </td>
   <td class="action">
-    <%= link_to cart_path(product_id: order_detail.product_id), method: :delete do %>
+    <%= link_to cart_path(product_id: order_detail.product_id), method: :delete,
+      data: {confirm: t("carts.confirm")} do %>
       <%= content_tag :i, "", class: "icon-close" %>
     <% end %>
   </td>

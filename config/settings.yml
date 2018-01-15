@@ -40,3 +40,5 @@ admin:
     number_of_products: 10
     picture_width: 650
     picture_height: 650
+  users:
+    number_of_users: 10

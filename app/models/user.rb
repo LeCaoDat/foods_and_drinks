@@ -9,9 +9,11 @@ class User < ApplicationRecord
   validates :name, presence: true, length: {maximum: Settings.user_models.max_length_name}
   validates :email, presence: true, length: {maximum: Settings.user_models.max_length_email},
     format: {with: VALID_EMAIL_REGEX}, uniqueness: {case_sensitive: false}
-  validates :password, presence: true, length: {minimum: Settings.user_models.min_length_password}, allow_nil: true
+  validates :password, presence: true, length: {minimum: Settings.user_models.min_length_password},
+    allow_nil: true
   before_save :downcase_email
   before_create :create_activation_digest
+  scope :search, ->(key){where("email LIKE ? OR name LIKE ?", "%#{key}%", "%#{key}%")}
 
   class << self
     def digest string
