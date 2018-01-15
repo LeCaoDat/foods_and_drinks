@@ -8492,6 +8492,7 @@ ul.products-grid {
 }
 .bg{
   display: inline;
+  padding-left: 20px;
 }
 .pinline{
   display: inline;

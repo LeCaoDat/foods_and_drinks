@@ -1,0 +1,33 @@
+<div class="order-detail-content">
+  <div class="table-responsive">
+    <table class="table table-bordered cart_summary">
+      <thead>
+        <tr>
+          <th class="cart_product"><%= t ".product" %></th>
+          <th><%= t ".name" %></th>
+          <th><%= t ".price" %></th>
+          <th><%= t ".quality" %></th>
+          <th><%= t ".total_label" %></th>
+          <th class="action"><i class="fa fa-trash-o"></i></th>
+        </tr>
+      </thead>
+      <tbody>
+        <%= render partial: "order_cart", collection: @order_details, as: :order_detail %>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" rowspan="2"></td>
+          <td colspan="3"><strong><%= t ".total_label" %></strong></td>
+          <td colspan="2">
+            <strong id="cart-total-price">
+              <%= t ".total", price: total_price(@order_details) %>
+            </strong>
+          </td>
+        </tr>
+      </tfoot>
+    </table>
+  </div>
+  <div class="cart_navigation">
+    <a class="checkout-btn" href="#"><i class="fa fa-check"></i><%= t ".checkout" %></a>
+  </div>
+</div>

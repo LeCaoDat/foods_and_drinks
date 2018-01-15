@@ -1,8 +1,6 @@
 class ProductsController < ApplicationController
   before_action :load_product, only: %i(show)
 
-  def new; end
-
   def show
     @rating = @product.ratings.build
     @comment = @product.comments.build

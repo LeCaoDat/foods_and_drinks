@@ -93,33 +93,14 @@
         <div class="col-lg-2 col-xs-3 top-cart">
           <div class="top-cart-contain">
             <div class="mini-cart">
-              <div data-toggle="dropdown" data-hover="dropdown" class="basket dropdown-toggle">
-                <%= link_to "" do %>
+              <div class="basket dropdown-toggle">
+                <%= link_to cart_path do %>
                   <div class="cart-icon"><i class="fa fa-shopping-cart"></i></div>
                   <div class="shoppingcart-inner hidden-xs">
                     <span class="cart-title"><%= t ".cart" %></span>
-                    <span class="cart-total"><%= t ".items", item: "0" %></span>
+                    <span class="cart-total"><%= t ".items", item: current_order.size %></span>
                   </div>
                 <% end %>
-              </div>
-              <div>
-                <div class="top-cart-content">
-                  <div class="block-subtitle hidden-xs"><%= t ".recently_added_item" %></div>
-                  <ul id="cart-sidebar" class="mini-products-list">
-                    <p>No item</p>
-                  </ul>
-                  <div class="top-subtotal">
-                    <%= t ".subtotal" %><span class="price"><%= t ".price", price: "0" %></span>
-                  </div>
-                  <div class="actions">
-                    <button class="btn-checkout" type="button">
-                      <i class="fa fa-check"></i><span><%= t ".checkout" %></span>
-                    </button>
-                    <button class="view-cart" type="button">
-                      <i class="fa fa-shopping-cart"></i> <span><%= t ".view_cart" %></span>
-                    </button>
-                  </div>
-                </div>
               </div>
             </div>
           </div>

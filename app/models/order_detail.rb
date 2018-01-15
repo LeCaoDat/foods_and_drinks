@@ -4,4 +4,5 @@ class OrderDetail < ApplicationRecord
   delegate :name, to: :product, prefix: "product", allow_nil: true
   delegate :price, to: :product, prefix: "product", allow_nil: true
   delegate :picture, to: :product, prefix: "product", allow_nil: true
+  delegate :quality, to: :product, prefix: "product", allow_nil: true
 end
