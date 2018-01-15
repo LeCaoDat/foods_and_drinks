@@ -16,13 +16,13 @@ class Category < ApplicationRecord
     children_array.flatten
   end
 
-  def all_children level = 0
+  def all_children symbol =  I18n.t("categories.level"), level = 0
     children_array = []
     level += 1
     childs.all.find_each do |child|
-      child.name = I18n.t("categories.level") * level + child.name
+      child.name = symbol.to_s * level + child.name
       children_array << child
-      children_array << child.all_children(level)
+      children_array << child.all_children(symbol, level)
     end
     children_array.flatten
   end
@@ -30,7 +30,7 @@ class Category < ApplicationRecord
   private
 
   def parent_not_found_and_self
-    return if (parent_id != id) && (Category.find_by id: parent_id)
+    return if (parent_id != id) && ((Category.find_by id: parent_id) || parent_id == Settings.categories.root_id)
     errors.add(:parent_id, I18n.t("admin.categories.not_valid_parent"))
   end
 end

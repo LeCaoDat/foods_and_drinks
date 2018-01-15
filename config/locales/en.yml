@@ -139,6 +139,7 @@ en:
       all_product: "All product"
   categories:
     level: "&nbsp;&nbsp;&nbsp;"
+    level_suggest: "-"
   ratings:
     create:
       rating_success: "Rating success"
@@ -197,6 +198,7 @@ en:
     order_detail:
       price: "$ %{price}"
     show:
+      history_orders: "Order Details"
       image_label: "Image"
       product_name_label: "Product Name"
       unit_price_label: "Unit Price"
@@ -247,6 +249,7 @@ en:
         manage_products: "Manage Products"
         manage_orders: "Manage Orders"
     categories:
+      root_category: "New root category"
       not_valid_parent: "Not valid parent"
       not_found_category: "Not found category"
       can_not_delete: "Can not delete root category"
@@ -257,7 +260,7 @@ en:
         created_at: "Created At"
         updated_at: "Updated At"
         function: "Function"
-        manage_categories_title: "Manage categories"
+        manage_categories_title: "Manage Categories"
         list_category: "List category"
         add_new: "Add new"
       destroy:
@@ -267,7 +270,8 @@ en:
       edit:
         update_category_title: "Update Category"
       update:
-        update_success: "Update Success"
+        update_success: "Update success"
+        update_failed: "Update failed"
       new:
         new_category_title: "New Category"
       create:
@@ -276,4 +280,41 @@ en:
       category_form:
         name_place_holder: "Input category name"
         parent: "Parent"
+        button_submit: "Save"
+    products:
+      image_oversize: "should be less than 5MB"
+      not_found_product: "Not found product"
+      index:
+        id: "id"
+        picture: "Picture"
+        name: "Name"
+        quality: "Quality"
+        price: "Price"
+        category_id: "Category Id"
+        created_at: "Created At"
+        updated_at: "Updated At"
+        function: "Function"
+        manage_products_title: "Manage Products"
+        list_product: "List product"
+        add_new: "Add new"
+      destroy:
+        delete_success: "Delete success"
+        delete_failed: "Delete failed"
+        confirm: "Are you sure?"
+      edit:
+        update_product_title: "Update Products"
+      update:
+        update_success: "Update success"
+        update_failed: "Update failed"
+      new:
+        new_product_title: "New Product"
+      create:
+        add_success: "Add success"
+        add_failed: "Add failed"
+      product_form:
+        name_place_holder: "Input product name"
+        detail_place_holder: "Input product detail"
+        price_place_holder: "Input product price"
+        quality_place_holder: "Input product quality"
+        category: "Category"
         button_submit: "Save"
