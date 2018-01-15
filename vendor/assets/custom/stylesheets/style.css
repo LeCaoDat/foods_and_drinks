@@ -12,9 +12,9 @@
   1. Common styles
   2. Newsletter Popup
   3. Layout
-     3.1. col1 layout
-     3.2. col2 layout
-     3.3. col3 layout
+   3.1. col1 layout
+   3.2. col2 layout
+   3.3. col3 layout
   4. Header
 		4.1 welcome info
 		4.2 header top
@@ -8472,17 +8472,17 @@ ul.products-grid {
   transition: color 300ms ease-in-out 0s, background-color 300ms ease-in-out 0s, background-position 300ms ease-in-out 0s;
 }
 .button{
-    display: inline-block;
-    background: #4caf50;
-    padding: 6px 16px;
-    font-weight: 900;
-    text-align: center;
-    white-space: nowrap;
-    color: #fff;
-    font-weight: normal;
-    -moz-transition: all 0.3s linear;
-    -webkit-transition: all 0.3s linear;
-    font-family: "Roboto", sans-serif;
+  display: inline-block;
+  background: #4caf50;
+  padding: 6px 16px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: normal;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  font-family: "Roboto", sans-serif;
 }
 .quick_view_popup-wrap{
   display: block;
@@ -8496,4 +8496,28 @@ ul.products-grid {
 }
 .pinline{
   display: inline;
+}
+.buttonn {
+  display: inline-block;
+  border: 0;
+  background: #4caf50;
+  padding: 6px 16px;
+  font-size: 12px;
+  font-weight: 900;
+  text-align: center;
+  white-space: nowrap;
+  color: #fff;
+  font-weight: normal;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  font-family: "Roboto", sans-serif;
+}
+.buttonn:hover {
+  background: #39342e;
+  border: 2px solid #39342e;
+  transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -webkit-transition: all 0.3s linear;
+  color: #fff
 }

@@ -5,7 +5,7 @@ class CreateSuggests < ActiveRecord::Migration[5.1]
       t.references :category, foreign_key: true
       t.string :product_name
       t.string :detail
-      t.boolean :status
+      t.boolean :status, default: false
 
       t.timestamps
     end
