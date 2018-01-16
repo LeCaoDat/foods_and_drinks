@@ -1,5 +1,7 @@
 module Admin
   class UsersController < AdminBaseController
+    before_action :find_user, only: %i(destroy)
+
     def index
       @users =
         if params[:search]
@@ -12,11 +14,20 @@ module Admin
     end
 
     def destroy
-      if @user.destroy
+      if !@user.is_admin? && @user.destroy
         flash[:success] = t ".delete_success"
       else
         flash[:danger] = t ".delete_failed"
       end
+      redirect_to admin_users_path
+    end
+
+    private
+
+    def find_user
+      @user = User.find_by id: params[:id]
+      return if @user
+      flash[:danger] = t "error_sign_up"
       redirect_to admin_users_path
     end
   end

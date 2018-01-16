@@ -36,6 +36,9 @@ comments:
 suggests:
   max_length_name: 50
   max_length_detail: 255
+  pending: 0
+  accept_status: 1
+  reject_status: 2
 admin:
   categories:
     number_of_categories: 10
@@ -47,3 +50,5 @@ admin:
     number_of_users: 10
   orders:
     number_of_orders: 10
+  suggests:
+    number_of_suggests: 10
