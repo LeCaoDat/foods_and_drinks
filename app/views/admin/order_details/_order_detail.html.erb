@@ -1,0 +1,8 @@
+<tr>
+  <td><%= no_order order_detail_counter %></td>
+  <td class="th-product"><%= image_tag order_detail.product_picture.url %></td>
+  <td><%= order_detail.product_name %></td>
+  <td><%= order_detail.quality %></td>
+  <td><%= order_detail.product_price %></td>
+  <td><%= calc_price order_detail.product_price, order_detail.quality %></td>
+</tr>

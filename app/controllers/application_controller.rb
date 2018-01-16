@@ -3,6 +3,7 @@ class ApplicationController < ActionController::Base
   include StaticPagesHelper
   include SessionsHelper
   include FiltersHelper
+  include OrderDetailsHelper
   helper_method :current_order
 
   def logged_in_user

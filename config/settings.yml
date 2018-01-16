@@ -28,6 +28,9 @@ filters:
   number_of_products: 8
 orders:
   number_of_orders: 5
+  pending_status: 0
+  accept_status: 1
+  reject_status: 2
 comments:
   max_length_content: 255
 suggests:
@@ -42,3 +45,5 @@ admin:
     picture_height: 650
   users:
     number_of_users: 10
+  orders:
+    number_of_orders: 10

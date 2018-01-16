@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(index show destroy)
   resources :order_details, only: :show
-  resources :order_details
   resources :suggests, only: %i(new create)
   resource :cart, except: %i(index new edit)
   namespace :admin do
@@ -21,5 +20,8 @@ Rails.application.routes.draw do
     resources :categories, except: :show
     resources :products, except: :show
     resources :users, only: %i(index destroy)
+    resources :orders, only: %i(index update) do
+      resources :order_details, only: :index
+    end
   end
 end
