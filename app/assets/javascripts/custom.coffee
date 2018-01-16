@@ -6,13 +6,13 @@ $(document).ready(ready)
 $(document).on 'turbolinks:load', ->
   mega_menu = '0'
   @dec_quality = ->
-    result = document.getElementById('qty');
+    result = document.getElementById('quality');
     qty = result.value
     if(!isNaN( qty ) && qty > 1)
       result.value--
     return false
   @inc_quality = (quality) ->
-    result = document.getElementById('qty');
+    result = document.getElementById('quality');
     qty = result.value
     if( !isNaN( qty ) && qty < quality)
       result.value++
