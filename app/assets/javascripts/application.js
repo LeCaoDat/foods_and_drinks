@@ -15,6 +15,7 @@
 //= require rails-ujs
 //= require turbolinks
 //= require custom.coffee
+//= require javascripts/megamenu.js
 //= require javascripts/owl.carousel.min.js
 //= require javascripts/jquery.bxslider.js
 //= require javascripts/revolution-slider.js

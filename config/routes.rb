@@ -5,14 +5,15 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   delete "/logout", to: "sessions#destroy"
   get "/search", to: "filters#show"
-  get "/orders", to: "orders#index"
+  resources :orders, only: %i(index destroy) do
+    resources :order_details, only: :index
+  end
   resources :users, except: %i(index destroy)
   resources :products, only: :show
   resources :ratings, only: :create
   resources :comments, only: :create
   resources :account_activations, only: :edit
   resources :password_resets, except: %i(index show destroy)
-  resources :order_details, only: :show
   resources :suggests, only: %i(new create)
   resource :cart, except: %i(index new edit)
   namespace :admin do

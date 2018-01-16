@@ -208,7 +208,7 @@ en:
   order_details:
     order_detail:
       price: "$ %{price}"
-    show:
+    index:
       history_orders: "Order Details"
       image_label: "Image"
       product_name_label: "Product Name"
