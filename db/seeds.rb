@@ -30,14 +30,17 @@ end
 categories = Category.all
 10.times do
   price = 10000
-  quantity = 10
+  quantity = 100
   categories.each{|category| category.products.create!(name: Faker::Name.name, detail: Faker::Lorem.sentence(20), price: price, quantity: quantity)}
 end
 
 users = User.take(5)
 3.times do |n|
   users.each do |user|
-    user.orders.create!(total: 0)
+    order = user.orders.create(total: 0)
+    order.created_at = rand(30).days.ago
+    order.status = rand(0..1)
+    order.save
   end
 end
 
@@ -46,7 +49,7 @@ products = Product.take(2)
 orders.each do |order|
   2.times do |n|
     products.each do |product|
-      order_detail = order.order_details.new quantity: 2
+      order_detail = order.order_details.new quantity: rand(1..10)
       product.order_details << order_detail
     end
   end

@@ -315,7 +315,7 @@ en:
         name: "Name"
         quantity: "Quantity"
         price: "Price"
-        category_id: "Category Id"
+        category: "Category"
         created_at: "Created At"
         updated_at: "Updated At"
         function: "Function"
@@ -369,6 +369,7 @@ en:
         female: "Female"
         none: "None"
     orders:
+      statistic: "Statistic orders"
       not_found_order: "Not found order"
       order:
         detail: "Detail"
@@ -412,8 +413,8 @@ en:
       can_not_delete: "Can not delete root suggest"
       index:
         id: "id"
-        id_name: "Id User"
-        id_category: "Id Category"
+        email: "Email"
+        category: "Category"
         detail: "Detail"
         status: "Status"
         function: "Function"

@@ -6,5 +6,6 @@ class Order < ApplicationRecord
   delegate :email, to: :user, prefix: :user, allow_nil: true
   delegate :name, to: :user, prefix: :user, allow_nil: true
   scope :created_at_desc, ->{order created_at: :desc}
-  scope :rank, ->(start){select("@row:=@row+1 as rank, orders.*").from("orders, (SELECT @row:=#{start}) as r")}
+  scope :rank, -> start {select("@row:=@row+1 as rank, orders.*").from("orders, (SELECT @row:=#{start}) as r")}
+  scope :total_on, -> date {where("date(created_at) = ?", date).sum("total")}
 end
