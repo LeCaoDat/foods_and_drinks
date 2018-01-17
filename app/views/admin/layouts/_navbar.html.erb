@@ -67,29 +67,39 @@
               <%= link_to t(".admin.layouts.manage_products"), admin_products_path %>
             </li>
             <li>
-              <%= link_to t(".import_products"), "import_path" %>
+              <%= link_to t(".import_products"), import_admin_products_path %>
             </li>
           </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right"
           title="<%= t "admin.layouts.manage_orders" %>">
-          <%= link_to admin_orders_path, class: "nav-link" do %>
+          <%= link_to "#collapseOrder",
+            class: "nav-link nav-link-collapse collapsed", "data-toggle": "collapse",
+            "data-parent": "#collapseOrder" do %>
             <i class="fa fa-fw fa-shopping-cart"></i>
             <span class="nav-link-text"><%= t "admin.layouts.manage_orders" %></span>
+            <span class="fa arrow"></span>
           <% end %>
+          <ul class="nav nav-second-level collapse" id="collapseOrder">
+            <li>
+              <%= link_to admin_orders_path do %>
+                <i class="fa fa-fw fa-shopping-cart"></i>
+                <%= t ".admin.layouts.manage_orders" %>
+              <% end %>
+            </li>
+            <li>
+              <%= link_to "" do %>
+                <i class="fa fa-fw fa-table"></i>
+                <%= t ".statistic_orders" %>
+              <% end %>
+            </li>
+          </ul>
         </li>
         <li class="nav-item" data-toggle="tooltip" data-placement="right"
           title="<%= t "admin.layouts.manage_suggests" %>">
           <%= link_to admin_suggests_path, class: "nav-link" do %>
             <i class="fa fa-fw fa-lightbulb-o"></i>
             <span class="nav-link-text"><%= t "admin.layouts.manage_suggests" %></span>
-          <% end %>
-        </li>
-        <li class="nav-item" data-toggle="tooltip" data-placement="right"
-          title="<%= t ".statistic_orders" %>">
-          <%= link_to "", class: "nav-link" do %>
-            <i class="fa fa-fw fa-table"></i>
-            <span class="nav-link-text"><%= t ".statistic_orders" %></span>
           <% end %>
         </li>
       </ul>

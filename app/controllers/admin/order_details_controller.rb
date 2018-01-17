@@ -3,8 +3,10 @@ module Admin
     before_action :find_order, only: :index
 
     def index
-      @order_details = @order.order_details.paginate page: params[:page],
-        per_page: Settings.admin.orders.number_of_orders
+      page = valid_page params[:page]
+      per_page = Settings.admin.orders.number_of_orders
+      @order_details = @order.order_details.rank((page - 1) * per_page).paginate page: page,
+        per_page: per_page
     end
 
     private
