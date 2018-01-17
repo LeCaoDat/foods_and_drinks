@@ -216,7 +216,7 @@ en:
       image_label: "Image"
       product_name_label: "Product Name"
       unit_price_label: "Unit Price"
-      quality_label: "Quantity"
+      quantity_label: "Quantity"
       total_label: "Total"
   carts:
     shopping_title: "Shopping cart"
@@ -225,7 +225,7 @@ en:
       product: "Product"
       name: "Name"
       price: "Price"
-      quality: "Quantity"
+      quantity: "Quantity"
       total_label: "Total"
       total: "$ %{price}"
       checkout: "Checkout"
@@ -325,6 +325,9 @@ en:
         add_new: "Add new"
       edit:
         update_product_title: "Update Products"
+      update:
+        update_success: "Update success"
+        update_failed: "Update failed"
       destroy:
         delete_success: "Delete success"
         delete_failed: "Delete failed"
@@ -395,7 +398,7 @@ en:
         picture: "Picture"
         name: "Product Name"
         unit_price: "Unit price"
-        quality: "Quantity"
+        quantity: "Quantity"
         total: "Total"
     order_mailer:
       admin_respon:

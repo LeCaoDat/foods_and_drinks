@@ -30,8 +30,8 @@ end
 categories = Category.all
 10.times do
   price = 10000
-  quality = 10
-  categories.each{|category| category.products.create!(name: Faker::Name.name, detail: Faker::Lorem.sentence(20), price: price, quality: quality)}
+  quantity = 10
+  categories.each{|category| category.products.create!(name: Faker::Name.name, detail: Faker::Lorem.sentence(20), price: price, quantity: quantity)}
 end
 
 users = User.take(5)
@@ -46,7 +46,7 @@ products = Product.take(2)
 orders.each do |order|
   2.times do |n|
     products.each do |product|
-      order_detail = order.order_details.new quality: 2
+      order_detail = order.order_details.new quantity: 2
       product.order_details << order_detail
     end
   end

@@ -23,7 +23,7 @@
                 <div class="rating">
                   <%= product_rating @product %>
                 </div>
-                <% in_stock = @product.quality > Settings.products.out_of_stock %>
+                <% in_stock = @product.quantity > Settings.products.out_of_stock %>
                 <p class="rating-links"><%= t ".count_comment", count: @product.comments.size %></p>
                 <p class="availability pull-right <%= in_stock ? "in-stock " : "out-of-stock" %>">
                   <%= t ".available" %>
@@ -37,13 +37,13 @@
                   <div class="cart-plus-minus">
                     <label for="qty"><%= t(".quantity") %></label>
                     <div class="numbers-row">
-                      <div onClick="dec_quality()" class="dec qtybutton">
+                      <div onClick="dec_quantity()" class="dec qtybutton">
                         <i class="fa fa-minus">&nbsp;</i>
                       </div>
-                      <%= number_field_tag :quality, nil, class: "qty",
-                        value: Settings.products.min_quality, min: Settings.products.min_quality,
-                        max: @product.quality %>
-                      <div onClick="inc_quality(<%= @product.quality %>)" class="inc qtybutton">
+                      <%= number_field_tag :quantity, nil, class: "qty",
+                        value: Settings.products.min_quantity, min: Settings.products.min_quantity,
+                        max: @product.quantity %>
+                      <div onClick="inc_quantity(<%= @product.quantity %>)" class="inc qtybutton">
                         <i class="fa fa-plus">&nbsp;</i>
                       </div>
                     </div>
