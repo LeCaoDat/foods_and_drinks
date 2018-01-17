@@ -13,6 +13,7 @@ module Admin
       status = params[:status].to_i
       if (check_status status) && (@order.update_attribute :status, status)
         Admin::OrderMailer.admin_respon(@order.user, @order).deliver_now
+        @order.order_details.each(&:return_quantity_when_reject) if @order.reject?
         flash[:success] = t ".update_success"
       else
         flash[:danger] = t ".update_failed"

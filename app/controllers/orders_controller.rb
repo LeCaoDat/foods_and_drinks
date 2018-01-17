@@ -4,8 +4,12 @@ class OrdersController < ApplicationController
   before_action :find_order, only: %i(destroy)
 
   def index
-    @orders = @current_user.orders.paginate page: params[:page],
+    @orders = @current_user.orders.paginate page: valid_page(params[:page]),
       per_page: Settings.orders.number_of_orders
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def create

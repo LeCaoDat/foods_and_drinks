@@ -8,25 +8,9 @@
             <h2><%= t ".history_orders" %></h2>
           </div>
           <div class="wishlist-item table-responsive">
-            <table class="col-md-12">
-              <thead>
-                <tr>
-                  <th class="th-product"><%= t ".image_label" %></th>
-                  <th class="th-details"><%= t ".product_name_label" %></th>
-                  <th class="th-price"><%= t ".unit_price_label" %></th>
-                  <th class="th-quantity"><%= t ".quantity_label" %></th>
-                  <th class="th-price"><%= t ".total_label" %></th>
-                </tr>
-              </thead>
-              <tbody id="list-order">
-                <% if @order_details && @order_details.any? %>
-                  <%= render @order_details %>
-                <% else %>
-                  <tr><td colspan="4"><h5><%= t ".no_order" %></h5></td></tr>
-                <% end %>
-              </tbody>
-            </table>
-            <%= will_paginate @order_details, previous_label: "<", next_label: ">" %>
+            <div id="list-order-detail">
+              <%= render "list_order_detail" %>
+            </div>
         </div>
       </div>
     </div>
