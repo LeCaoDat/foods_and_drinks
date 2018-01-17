@@ -5,16 +5,16 @@ ready = ->
 $(document).ready(ready)
 $(document).on 'turbolinks:load', ->
   mega_menu = '0'
-  @dec_quality = ->
-    result = document.getElementById('quality');
+  @dec_quantity = ->
+    result = document.getElementById('quantity');
     qty = result.value
     if(!isNaN( qty ) && qty > 1)
       result.value--
     return false
-  @inc_quality = (quality) ->
-    result = document.getElementById('quality');
+  @inc_quantity = (quantity) ->
+    result = document.getElementById('quantity');
     qty = result.value
-    if( !isNaN( qty ) && qty < quality)
+    if( !isNaN( qty ) && qty < quantity)
       result.value++
     return false
   @close_popup = ->

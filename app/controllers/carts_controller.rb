@@ -12,9 +12,9 @@ class CartsController < ApplicationController
   def create
     order_detail = OrderDetail.new item_params
     result = find_product_in_cart(order_detail.product_id)
-    quality = order_detail.quality.to_i
+    quantity = order_detail.quantity.to_i
     if result
-      check_quality result, quality
+      check_quantity result, quantity
     else
       session[:shopping_cart] << order_detail
       flash[:success] = t ".success_add"
@@ -23,12 +23,12 @@ class CartsController < ApplicationController
   end
 
   def update
-    quality = params[:quality].to_i
-    if quality > @product.quality || quality <= 0
+    quantity = params[:quantity].to_i
+    if quantity > @product.quantity || quantity <= 0
       flash[:danger] = t ".invalid_quantity"
     else
       result = find_product_in_cart(@product.id)
-      result["quality"] = quality
+      result["quantity"] = quantity
     end
     redirect_to cart_path
   end
@@ -44,7 +44,7 @@ class CartsController < ApplicationController
   private
 
   def item_params
-    params.permit :product_id, :quality
+    params.permit :product_id, :quantity
   end
 
   def load_product
@@ -64,11 +64,11 @@ class CartsController < ApplicationController
     result
   end
 
-  def check_quality result, quality
-    if result["quality"] + quality > @product.quality
+  def check_quantity result, quantity
+    if result["quantity"] + quantity > @product.quantity
       flash[:danger] = t ".invalid_quantity"
     else
-      result["quality"] += quality
+      result["quantity"] += quantity
     end
   end
 end

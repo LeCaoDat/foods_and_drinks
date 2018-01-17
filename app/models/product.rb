@@ -6,7 +6,7 @@ class Product < ApplicationRecord
   validates :name, presence: true
   validates :detail, presence: true
   validates :price, presence: true, numericality: true
-  validates :quality, presence: true, numericality: {only_integer: true}
+  validates :quantity, presence: true, numericality: {only_integer: true}
   validate :picture_size
   mount_uploader :picture, PictureUploader
   scope :filter_by_alphabet, ->(alpha){where("name LIKE ?", "#{alpha}%") if alpha.present?}
@@ -16,13 +16,13 @@ class Product < ApplicationRecord
   scope :filter_by_max_price, ->(max_price){where("price <= ?", max_price) if max_price.present?}
   scope :filter_by_rate, (lambda do |rate|
     select("products.*").joins("JOIN ratings r ON products.id = r.product_id")
-    .group(:id, :name, :price, :quality, :detail, :picture, :category_id, :created_at, :updated_at)
+    .group(:id, :name, :price, :quantity, :detail, :picture, :category_id, :created_at, :updated_at)
     .having("ROUND(AVG(rate)) = ?", rate)
   end)
   scope :hot_trend, (lambda do
     select("products.*").joins(:order_details)
-    .group(:id, :name, :price, :quality, :detail, :picture, :category_id, :created_at, :updated_at)
-    .order("SUM(order_details.quality) DESC").limit Settings.products.hot_trend_record
+    .group(:id, :name, :price, :quantity, :detail, :picture, :category_id, :created_at, :updated_at)
+    .order("SUM(order_details.quantity) DESC").limit Settings.products.hot_trend_record
   end)
 
   def average_rating

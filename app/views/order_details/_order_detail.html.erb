@@ -6,7 +6,7 @@
   </td>
   <td class="th-details"><h2><%= link_to order_detail.product_name, order_detail.product %></td>
   <td class="th-price"><%= t ".price", price: order_detail.product_price %></td>
-  <td class="th-quality"><%= order_detail.quality %></td>
+  <td class="th-quantity"><%= order_detail.quantity %></td>
   <td class="th-price"><%= t ".price",
-    price: calc_price(order_detail.product_price, order_detail.quality) %></td>
+    price: calc_price(order_detail.product_price, order_detail.quantity) %></td>
 </tr>
