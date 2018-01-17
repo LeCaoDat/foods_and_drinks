@@ -3,7 +3,7 @@ class ProductsController < ApplicationController
 
   def show
     @rating = @product.ratings.build
-    @comment = @product.comments.build
+    @comment = Comment.new
     @comments = @product.comments.desc_created_at.paginate page: params[:page],
       per_page: Settings.products.number_of_comment
     respond_to do |format|
