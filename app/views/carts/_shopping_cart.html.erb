@@ -28,6 +28,10 @@
     </table>
   </div>
   <div class="cart_navigation">
-    <a class="checkout-btn" href="#"><i class="fa fa-check"></i><%= t ".checkout" %></a>
+    <% if @order_details.any? %>
+      <%= link_to orders_path, class: "checkout-btn", method: :post do %>
+        <i class="fa fa-check"></i><%= t ".checkout" %>
+      <% end %>
+    <% end %>
   </div>
 </div>

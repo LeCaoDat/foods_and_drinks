@@ -48,8 +48,6 @@ orders.each do |order|
     products.each do |product|
       order_detail = order.order_details.new quality: 2
       product.order_details << order_detail
-      total = order.total + order_detail.quality * product.price
-      order.update_attribute :total, total
     end
   end
 end

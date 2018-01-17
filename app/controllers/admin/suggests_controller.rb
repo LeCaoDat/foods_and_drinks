@@ -29,10 +29,8 @@ module Admin
     private
 
     def check_status status
-      if status == Settings.suggests.accept_status ||
-          status == Settings.suggests.reject_status
-        true
-      end
+      array = [Settings.suggests.accept_status, Settings.suggests.reject_status]
+      true if array.include? status
     end
 
     def find_suggest
