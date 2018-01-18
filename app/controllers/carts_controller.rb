@@ -12,9 +12,10 @@ class CartsController < ApplicationController
   def create
     order_detail = OrderDetail.new item_params
     result = find_product_in_cart(order_detail.product_id)
-    quantity = order_detail.quantity.to_i
-    if result
-      check_quantity result, quantity
+    if order_detail.quantity.nil? || order_detail.quantity <= 0
+      flash[:danger] = t ".failed_add"
+    elsif result
+      check_quantity result, order_detail.quantity
     else
       session[:shopping_cart] << order_detail
       flash[:success] = t ".success_add"

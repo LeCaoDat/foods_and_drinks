@@ -30,13 +30,12 @@ en:
       checkout: "Checkout"
       view_cart: "View Cart"
       dashboard_admin: "Dashboard Admin"
-    mobile_menu:
+    mobilemenu:
       home: "Home"
       suggest: "Suggest"
-      categories: "Categories"
+      search: "Search"
     navbar:
-      categories: "Categories"
-      shop_by_category: "Shop by category"
+      shop_foods_and_drinks: "Shop Foods and Drinks"
       home: "Home"
       suggest: "Suggest"
       search: "Search"

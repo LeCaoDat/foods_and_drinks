@@ -5,13 +5,19 @@ class OrderDetail < ApplicationRecord
   delegate :price, to: :product, prefix: :product, allow_nil: true
   delegate :picture, to: :product, prefix: :product, allow_nil: true
   delegate :quantity, to: :product, prefix: :product, allow_nil: true
+  before_destroy :return_quantity_when_reject
   after_save :update_order_total_price
   scope :rank, ->(start){
     select("@row:=@row+1 as rank, order_details.*").from("order_details, (SELECT @row:=#{start}) as r")}
+
+  def return_quantity_when_reject
+    product.update_attribute :quantity, product_quantity + quantity if order.pending? || order.reject?
+  end
 
   private
 
   def update_order_total_price
     order.update_attribute :total, (order.total + product_price * quantity)
+    product.update_attribute :quantity, product_quantity - quantity
   end
 end

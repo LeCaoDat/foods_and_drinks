@@ -2,8 +2,12 @@ class OrderDetailsController < ApplicationController
   before_action :logged_in_user, :find_order, only: %i(index)
 
   def index
-    @order_details = @order.order_details.paginate page: params[:page],
+    @order_details = @order.order_details.paginate page: valid_page(params[:page]),
       per_page: Settings.orders.number_of_orders
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   private
