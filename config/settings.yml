@@ -50,6 +50,8 @@ admin:
     number_of_users: 10
   orders:
     number_of_orders: 10
+  order_details:
+    number_of_order_details: 5
   suggests:
     number_of_suggests: 10
 page:
