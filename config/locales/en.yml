@@ -315,7 +315,7 @@ en:
         name: "Name"
         quantity: "Quantity"
         price: "Price"
-        category: "Category"
+        category_name: "Category Name"
         created_at: "Created At"
         updated_at: "Updated At"
         function: "Function"
@@ -370,6 +370,7 @@ en:
         none: "None"
     orders:
       statistic: "Statistic orders"
+      load_data: "Load data"
       not_found_order: "Not found order"
       order:
         detail: "Detail"

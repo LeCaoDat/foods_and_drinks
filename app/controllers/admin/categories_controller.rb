@@ -5,6 +5,10 @@ module Admin
     def index
       @categories = Category.all.paginate page: params[:page],
         per_page: Settings.admin.categories.number_of_categories
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new
