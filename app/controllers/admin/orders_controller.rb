@@ -7,6 +7,10 @@ module Admin
       per_page = Settings.admin.orders.number_of_orders
       @orders = Order.created_at_desc.rank((page - 1) * per_page).paginate page: page,
         per_page: per_page
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def update

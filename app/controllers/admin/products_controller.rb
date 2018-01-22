@@ -5,6 +5,10 @@ module Admin
     def index
       @products = Product.all.paginate page: params[:page],
         per_page: Settings.admin.products.number_of_products
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def new

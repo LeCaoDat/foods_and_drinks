@@ -4,6 +4,7 @@ ready = ->
   $('body').attr('data-loaded','T')
 $(document).ready(ready)
 $(document).on 'turbolinks:load', ->
+  $('.pagination a').attr('data-remote', 'true');
   @close_popup = ->
     document.getElementById('quick_view_popup-overlay').style.display = 'none'
     document.getElementById('quick_view_popup-wrap').style.display = 'none'
