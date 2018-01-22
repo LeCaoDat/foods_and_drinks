@@ -20,7 +20,7 @@
         <div class="modal-dialog">
           <div class="modal-content alert alert-<%= message_type %>">
             <div class="modal-header">
-              <h4 class="modal-title"><%= message_type.capitalize %></h4>
+              <h4 class="modal-title"><%= t("notice_message_#{message_type}").capitalize %></h4>
             </div>
             <div class="modal-body">
               <p><%= message %></p>
@@ -39,7 +39,10 @@
       <%= render "layouts/navbar" %>
       <%= yield %>
       <%= render "layouts/footer" %>
-      <%= debug params if Rails.env.development? %>
+      <% debug params if Rails.env.development? %>
     </div>
+    <script type="text/javascript">
+      var mega_menu = '0'
+    </script>
   </body>
 </html>

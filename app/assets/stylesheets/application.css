@@ -15,7 +15,6 @@
  *= require "stylesheets/animate.css"
  *= require "stylesheets/blog.css"
  *= require "stylesheets/flexslider.css"
- *= require "stylesheets/font-awesome.css"
  *= require "stylesheets/jquery-ui.css"
  *= require "stylesheets/owl.carousel.css"
  *= require "stylesheets/owl.theme.css"
@@ -24,4 +23,6 @@
  *= require "stylesheets/revolution-slider.css"
  *= require "stylesheets/simple-line-icons.css"
  *= require "stylesheets/style.css"
+ *= require status.scss
+ *= require rating.scss
  */

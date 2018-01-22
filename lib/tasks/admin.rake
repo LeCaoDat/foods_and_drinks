@@ -11,4 +11,12 @@ namespace :admin do
     Category.create!(name: "Foods", parent_id: 0)
     Category.create!(name: "Drinks", parent_id: 0)
   end
+
+  desc "Send email"
+  task email_sender: :environment do
+    admin = User.find_by is_admin: true
+    today = Date.today
+    end_of_month = today.end_of_month
+    Admin::OrderMailer.end_of_month_mail(admin).deliver if today.day == end_of_month.day
+  end
 end

@@ -28,9 +28,6 @@ filters:
   number_of_products: 8
 orders:
   number_of_orders: 5
-  pending_status: 0
-  accept_status: 1
-  reject_status: 2
 comments:
   max_length_content: 255
 suggests:
@@ -56,3 +53,6 @@ admin:
     number_of_suggests: 10
 page:
   default_page: 1
+languages:
+  vi_image: "vietnam.png"
+  en_image: "english.png"

@@ -12,20 +12,21 @@
               <%= form_for @suggest do |f| %>
                 <div class="contact-form-box">
                   <%= render "shared/error_messages", object: f.object %>
-                  <div class="form-selector">
+                  <div class="form-group">
                     <%= f.label :name_product %>
                     <%= f.text_field :product_name, class: "form-control input-sm", required: true %>
                   </div>
-                  <div class="form-selector">
+                  <div class="form-group">
                     <%= f.label :category %>
                     <%= f.collection_select :category_id, list_category, :id, :name, {}, class: "form-control" %>
                   </div>
-                  <div class="form-selector">
+                  <div class="form-group">
                     <%= f.label :detail %>
-                    <%= f.text_field :detail, class: "form-control input-sm", required: true %>
+                    <%= f.text_area :detail, rows: "6", class: "form-control", required: true %>
                   </div>
-                  <div class="form-selector">
+                  <div class="form-group">
                     <%= f.submit t(".send_suggest"), class: "buttonn"%>
+                  </div>
                 </div>
               <% end %>
             </div>

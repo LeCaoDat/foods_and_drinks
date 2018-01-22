@@ -10,50 +10,51 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-7 col-lg-7 col-md-7 product-details-area">
-              <div class="product-name">
-                <h1><%= @product.name %></h1>
+            <div class="product-name">
+              <h1><%= @product.name %></h1>
+            </div>
+            <div class="price-box">
+              <p class="special-price">
+                <span class="price-label"><%= t "products.price_label" %></span
+                <span class="price"><%= t "products.price", price: @product.price %></span>
+              </p>
+            </div>
+            <div class="ratings">
+              <div class="rating">
+                <%= product_rating @product %>
               </div>
-              <div class="price-box">
-                <p class="special-price">
-                  <span class="price-label"><%= t "products.price_label" %></span
-                  <span class="price"><%= t "products.price", price: @product.price %></span>
-                </p>
-              </div>
-              <div class="ratings">
-                <div class="rating">
-                  <%= product_rating @product %>
-                </div>
-                <% in_stock = @product.quantity > Settings.products.out_of_stock %>
-                <p class="rating-links"><%= t ".count_comment", count: @product.comments.size %></p>
-                <p class="availability pull-right <%= in_stock ? "in-stock " : "out-of-stock" %>">
-                  <%= t ".available" %>
-                  <span>
-                    <%= in_stock ? t(".in_stock") : t(".out_of_stock") %>
-                  </span>
-                </p>
-              </div>
-              <div class="product-variation">
-                <%= form_tag cart_path(product_id: @product.id), method: :post do %>
-                  <div class="cart-plus-minus">
-                    <label for="qty"><%= t(".quantity") %></label>
-                    <div class="numbers-row">
-                      <div onClick="dec_quantity()" class="dec qtybutton">
-                        <i class="fa fa-minus">&nbsp;</i>
-                      </div>
-                      <%= number_field_tag :quantity, nil, class: "qty",
-                        value: Settings.products.min_quantity, min: Settings.products.min_quantity,
-                        max: @product.quantity, required: true %>
-                      <div onClick="inc_quantity(<%= @product.quantity %>)" class="inc qtybutton">
-                        <i class="fa fa-plus">&nbsp;</i>
+              <% in_stock = @product.quantity > Settings.products.out_of_stock %>
+              <p class="rating-links"><%= t ".count_comment", count: @product.comments.size %></p>
+              <p class="availability pull-right <%= in_stock ? "in-stock " : "out-of-stock" %>">
+                <%= t ".available" %>
+                <span>
+                  <%= in_stock ? t(".in_stock") : t(".out_of_stock") %>
+                </span>
+              </p>
+              <% unless @product.quantity.zero? %>
+                <div class="product-variation">
+                  <%= form_tag cart_path(product_id: @product.id), method: :post do %>
+                    <div class="cart-plus-minus">
+                      <label for="qty"><%= t(".quantity") %></label>
+                      <div class="numbers-row">
+                        <div onClick="dec_quantity()" class="dec qtybutton">
+                          <i class="fa fa-minus">&nbsp;</i>
+                        </div>
+                        <%= number_field_tag :quantity, nil, class: "qty",
+                          value: Settings.products.min_quantity, min: Settings.products.min_quantity,
+                          max: @product.quantity, required: true %>
+                        <div onClick="inc_quantity(<%= @product.quantity %>)" class="inc qtybutton">
+                          <i class="fa fa-plus">&nbsp;</i>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                  <%= button_tag type: "submit", class: "button pro-add-to-cart",
-                  title: t("products.add_to_cart"), name: nil do %>
-                    <span><i class="fa fa-shopping-cart"></i><%= t("products.add_to_cart") %></span>
+                    <%= button_tag type: "submit", class: "button pro-add-to-cart",
+                    title: t("products.add_to_cart"), name: nil do %>
+                      <span><i class="fa fa-shopping-cart"></i><%= t("products.add_to_cart") %></span>
+                    <% end %>
                   <% end %>
-                <% end %>
-              </div>
+                </div>
+              <% end %>
           </div>
         </div>
       </div>
@@ -77,7 +78,7 @@
                     </div>
                   </div>
                   <div id="reviews" class="tab-pane fade <%= active_tab :comment, "in active" %>">
-                    <div class="col-sm-7 col-lg-7 col-md-7">
+                    <div class="col-sm-7 col-lg-7 col-md-7" id="list-comment">
                       <%= render "comment" %>
                     </div>
                     <div class="col-sm-5 col-lg-5 col-md-5">

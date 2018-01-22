@@ -11,4 +11,12 @@
     </div>
     <div class="comment"><%= comment.content %></div>
   </div>
+  <% if current_user == comment.user %>
+    <div class="function">
+      <%= link_to comment_path(comment), method: :delete,
+        data: {confirm: t("comments.destroy.confirm")}, remote: true do %>
+        <i class="fa fa-trash-o"></i>
+      <% end %>
+    </div>
+  <% end %>
 </li>

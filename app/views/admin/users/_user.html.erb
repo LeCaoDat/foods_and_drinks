@@ -10,6 +10,6 @@
     <%= link_to admin_user_path(user), method: :delete,
       data: {confirm: t("admin.users.destroy.confirm")} do %>
       <i class="fa fa-trash-o"></i>
-    <% end %>
+    <% end unless user.is_admin?%>
   </td>
 </tr>

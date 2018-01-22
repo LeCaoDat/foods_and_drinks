@@ -1,5 +1,6 @@
 class RatingsController < ApplicationController
-  before_action :logged_in_user, :find_product, :check_rating, only: %i(create)
+  before_action :logged_in_user, :find_product, only: %i(create update)
+  before_action :load_rating, only: :update
 
   def new; end
 
@@ -13,20 +14,29 @@ class RatingsController < ApplicationController
     redirect_to @product
   end
 
+  def update
+    if @rating.update_attributes rating_params
+      flash[:success] = t ".rating_success"
+    else
+      flash[:danger] = t ".rating_faild"
+    end
+    redirect_to @product
+  end
+
   private
+
+  def load_rating
+    @rating = Rating.find_by id: params[:id]
+    return if @rating
+    flash[:danger] = t "ratings.not_found_rating"
+    redirect_to root_path
+  end
 
   def find_product
     @product = Product.find_by id: params[:product_id]
     return if @product
     flash[:danger] = t "products.not_found_product"
     redirect_to root_path
-  end
-
-  def check_rating
-    @rating = Rating.find_by user_id: @current_user.id, product_id: @product.id
-    return unless @rating
-    flash[:danger] = t "products.had_been_rating"
-    redirect_to @product
   end
 
   def rating_params

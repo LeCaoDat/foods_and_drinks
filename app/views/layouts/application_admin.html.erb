@@ -15,7 +15,7 @@
         <div class="modal-dialog">
           <div class="modal-content alert alert-<%= message_type %>">
             <div class="modal-header">
-              <h4 class="modal-title"><%= message_type.capitalize %></h4>
+              <h4 class="modal-title"><%= t("notice_message_#{message_type}").capitalize %></h4>
             </div>
             <div class="modal-body">
               <p><%= message %></p>

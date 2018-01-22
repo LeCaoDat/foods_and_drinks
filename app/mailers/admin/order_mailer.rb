@@ -7,6 +7,10 @@ module Admin
       mail to: user.email, subject: @status
     end
 
+    def end_of_month_mail admin
+      mail to: admin.email, subject: "Statistic Orders"
+    end
+
     private
 
     def check_status order
