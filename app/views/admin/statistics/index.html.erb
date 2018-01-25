@@ -15,7 +15,7 @@
           <%= form_tag admin_statistics_path, method: :get do %>
             <%= select_month(Date.today) %>
             <%= select_year(Date.today, start_year: @start_year, end_year: Time.now.year) %>
-            <%= button_tag "Load data", type: "submit", class: "btn btn-primary" %>
+            <%= button_tag t("admin.orders.load_data"), type: "submit", class: "btn btn-primary" %>
           <% end %>
           <%= hidden_field_tag :chart_data, "", data: {temp: @data} do %>
           <% end %>

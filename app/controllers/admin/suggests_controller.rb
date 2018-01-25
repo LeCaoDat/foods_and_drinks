@@ -5,6 +5,10 @@ module Admin
     def index
       @suggests = Suggest.all.paginate page: params[:page],
         per_page: Settings.admin.suggests.number_of_suggests
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def destroy

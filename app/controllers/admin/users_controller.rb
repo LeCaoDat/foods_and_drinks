@@ -11,6 +11,10 @@ module Admin
           User.all.paginate page: params[:page],
             per_page: Settings.admin.users.number_of_users
         end
+      respond_to do |format|
+        format.html
+        format.js
+      end
     end
 
     def destroy
