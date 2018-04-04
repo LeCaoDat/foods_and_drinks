@@ -35,7 +35,7 @@ module Admin
     end
 
     def check_status status
-      array = [Settings.orders.accept_status, Settings.orders.reject_status]
+      array = Order.statuses.values
       true if array.include? status
     end
   end

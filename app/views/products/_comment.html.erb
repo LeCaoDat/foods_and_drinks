@@ -1,8 +1,8 @@
-<div class="reviews-content-left" id="list-comment">
+<div class="reviews-content-left">
   <div class="single-box">
     <h2 class=""><%= t ".comment_list_title" %></h2>
     <div class="comment-list">
-      <ul id="comment_list">
+      <ul>
         <% if @comments.any? %>
           <%= render @comments %>
         <% else %>
@@ -16,5 +16,5 @@
     </div>
   </div>
   <%= will_paginate @comments, class: "pagination-area",
-    previous_label: "<", next_label: ">" if @comments %>
+    previous_label: "<", next_label: ",>", controller: :products, action: :show if @comments %>
 </div>

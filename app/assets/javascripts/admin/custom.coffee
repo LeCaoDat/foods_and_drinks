@@ -1,8 +1,3 @@
-ready = ->
-  if $('body').attr('data-loaded') == 'T'
-    return
-  $('body').attr('data-loaded','T')
-$(document).ready(ready)
 $(document).on 'turbolinks:load', ->
   $('.pagination a').attr('data-remote', 'true');
   @close_popup = ->

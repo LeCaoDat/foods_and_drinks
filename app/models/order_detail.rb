@@ -8,8 +8,7 @@ class OrderDetail < ApplicationRecord
   validates :quantity, presence: true, numericality: {only_integer: true}
   before_destroy :return_quantity_when_reject
   after_save :update_order_total_price
-  scope :rank, -> start {
-    select("@row:=@row+1 as rank, order_details.*").from("order_details, (SELECT @row:=#{start}) as r")}
+  scope :rank, ->(start){select("@r:=@r+1 as rank, order_details.*").from("order_details, (SELECT @r:=#{start}) as r")}
 
   def return_quantity_when_reject
     product.update_attribute :quantity, product_quantity + quantity if order.pending? || order.reject?

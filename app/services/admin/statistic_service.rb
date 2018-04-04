@@ -9,12 +9,11 @@ module Admin
     end
 
     def start_year
-      year =
-        if Order.minimum(:created_at)
-          Order.minimum(:created_at).year
-        else
-          Time.now.year
-        end
+      if Order.minimum(:created_at)
+        Order.minimum(:created_at).year
+      else
+        Time.now.year
+      end
     end
 
     private

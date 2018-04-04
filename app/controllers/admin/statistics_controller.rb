@@ -5,7 +5,7 @@ module Admin
       date = params[:date]
       @month, @year =
         if date
-         [date[:month].to_i, date[:year].to_i]
+          [date[:month].to_i, date[:year].to_i]
         else
           [Time.now.month, Time.now.year]
         end

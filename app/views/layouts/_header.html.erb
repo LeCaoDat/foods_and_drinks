@@ -59,7 +59,32 @@
                     <% end %>
                 </div>
               <% end %>
+            </div>
+            <div class="language-currency-wrapper">
+              <div class="inner-cl">
+                <div class="block block-language form-language">
+                  <div class="lg-cur">
+                    <span>
+                      <%= image_tag Settings.languages[:"#{I18n.locale}_image"], alt: t("languages.#{I18n.locale}") %>
+                      <span class="lg-vn"><%= t "languages.#{I18n.locale}" %></span>
+                      <i class="fa fa-angle-down"></i>
+                    </span>
+                  </div>
+                  <ul>
+                    <li>
+                      <%= link_to languages_path(locale: :vi) do %>
+                        <%= image_tag  "vietnam.png", alt: t("languages.vi") %> <span><%= t "languages.vi" %></span>
+                      <% end %>
+                    </li>
+                    <li>
+                      <%= link_to languages_path(locale: :en) do %>
+                        <%= image_tag  "english.png", alt: t("languages.vi") %> <span><%= t "languages.en" %></span>
+                      <% end %>
+                    </li>
+                  </ul>
+                </div>
               </div>
+            </div>
           </div>
         </div>
       </div>

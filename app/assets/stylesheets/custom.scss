@@ -1,5 +1,7 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
+@import "font-awesome-sprockets";
+@import "font-awesome";
 .error_explanation {
   color: red;
   ul {
@@ -19,4 +21,16 @@
 }
 .login a span {
   color: black !important;
+}
+.comment-list .function{
+  float: right;
+}
+.wishlist-item table .td-remove-order > a {
+  background: #b92727;
+  color: #fff;
+  display: inline-block;
+  font-weight: 700;
+  padding: 8px 14px;
+  text-transform: uppercase;
+  width: 115px;
 }

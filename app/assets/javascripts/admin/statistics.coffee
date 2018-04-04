@@ -11,7 +11,6 @@ $(document).on 'turbolinks:load', ->
       title:
         text: "Dollars"
     tooltip:
-      formatter = ->
-        return Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + '$' + Highcharts.numberFormat(this.y, 2)
+      text: Highcharts.dateFormat("%B %e %Y", this.x) + ': ' + '$' + Highcharts.numberFormat(this.y, 2)
     series: $('#chart_data').data('temp')
   )

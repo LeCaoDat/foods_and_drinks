@@ -12,7 +12,11 @@
         </tr>
       </thead>
       <tbody>
-        <%= render partial: "order_cart", collection: @order_details, as: :order_detail %>
+        <% if @order_details.any? %>
+          <%= render partial: "order_cart", collection: @order_details, as: :order_detail %>
+        <% else %>
+          <tr><td colspan="6"><%= t ".no_item" %></td></tr>
+        <% end %>
       </tbody>
       <tfoot>
         <tr>

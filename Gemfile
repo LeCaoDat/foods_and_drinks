@@ -26,6 +26,7 @@ gem "mini_magick", "4.7.0"
 gem "fog-aws", "2.0.0"
 gem "nokogiri", "1.8.1"
 gem "roo", "2.7.1"
+gem "font-awesome-sass", "~> 4.7.0"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
@@ -45,6 +46,10 @@ group :test do
   gem "minitest-reporters", "1.1.14"
   gem "guard", "2.13.0"
   gem "guard-minitest", "2.4.4"
+end
+
+group :production do
+  gem "rails_12factor"
 end
 
 gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]

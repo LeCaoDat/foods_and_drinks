@@ -3,7 +3,7 @@
   <div class="form-area">
     <div class="form-element">
       <%= f.label :content, t(".comment_label") %>
-      <%= f.text_area :content, require: true %>
+      <%= f.text_area :content, require: true, style: "width: 100%" %>
     </div>
     <div class="buttons-set">
       <%= f.button type: "submit", title: t(".comment_label"), class: "button submit", name: nil do %>

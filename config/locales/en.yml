@@ -4,6 +4,16 @@ en:
   account_activation: "Account activation"
   password_reset: "Password reset"
   error_sign_up: "User not found"
+  notice_message_success: "Success!!!"
+  notice_message_danger: "Danger!!!"
+  date:
+    formats:
+      default: "%Y-%m-%a %H:%M:%S"
+  time:
+    formats:
+      default: "%Y-%m-%d %H:%M:%S"
+      long: "%Y-%m-%d %H:%M"
+      short: "%m-%d %H:%M"
   order_mailer:
     user_order:
       new_order: "New Order"
@@ -45,65 +55,9 @@ en:
     no_item: "No item"
     home:
       home_title: "Home"
+      hot_trend: "Hot trend"
       food_category: "Food"
       drink_category: "Drink"
-  products:
-    had_been_rating: "You have rated this product"
-    price_label: "Price"
-    price: "$ %{price}"
-    add_to_cart: "Add to Cart"
-    no_image: "No image"
-    not_found_product: "Not found product"
-    show:
-      count_comment: "%{count} Commtent(s)"
-      available: "Availability: "
-      in_stock: "In Stock"
-      out_of_stock: "Out of stock"
-      quantity: "Quantity:"
-      description: "Description"
-      comment_review: "Comment and Rating"
-      comments: "Comments"
-      no_comment: "No comment"
-    rating_form:
-      rate_question: "How do you rate this product?"
-      rating_label: "Rate"
-      stars: "%{number} stars"
-      invalid_rate: "Invalid rating value"
-    comment_form:
-      comment_form_h2: "Write Your Own Review"
-      comment_label: "Comment"
-      button_submit: "Comment"
-    comment:
-      comment_list_title: "Comment"
-  users:
-    anonymous: "Anonymous"
-    please_log_in: "Please log in."
-    create:
-      success_signup: "Welcome to Foods and Drinks!"
-      failed_signup: "Sign up failed "
-      check_ymail: "Please check your email to activate your account."
-    show:
-      your_profile: "My Profile"
-      update: "(Update Profile)"
-      male: "Male"
-      female: "Female"
-      gmale: "None"
-    new:
-      signup: "Sign up"
-      create_account: "Create your very own account"
-      signup_able: "Sign up today and you will be able to :"
-      li_speed: "Speed your way through checkout"
-      li_track: "Track your orders easily"
-      li_keep: "Keep a record of all your purchases"
-    up_edit:
-      submit: "Create my account"
-      confirm: "Password confirmation"
-    edit:
-      update: "Update My Profile"
-      edit_user: "Edit user"
-      please_login: "Please log in."
-    update:
-      profile_updated: "Profile updated"
   shared:
     error_messages:
       error_content: "The form contains "
@@ -124,10 +78,6 @@ en:
       submit: "Log in"
       lost_password: "Lost your password?"
       create_account: "Create your very own account!!!"
-  up_user:
-    up_edit:
-      submit: "Create my account"
-      confirm: "Password confirmation"
   filters:
     search_title: "Search"
     show:
@@ -148,10 +98,18 @@ en:
     create:
       rating_success: "Rating success"
       rating_faild: "Rating faild"
+    update:
+      rating_success: "Rating success"
+      rating_faild: "Rating faild"
   comments:
+    not_found_comments: "Not found comment"
     create:
       comment_success: "Comment success"
       comment_faild: "Comment faild"
+    destroy:
+      delete_success: "Delete Success"
+      delete_failed: "Delete Failed"
+      confirm: "Are you sure?"
   password_resets:
     new:
       submit: "Submit"
@@ -249,191 +207,3 @@ en:
     create:
       suggest_success: "Suggested success"
       suggest_fail: "Suggested fail"
-  admin:
-    layouts:
-      dashboard: "Dashboard"
-      manage_users: "Manage Users"
-      manage_categories: "Manage Categories"
-      manage_products: "Manage Products"
-      manage_orders: "Manage Orders"
-      manage_suggests: "Manage Suggests"
-      manage_order_details: "Manage Order details"
-      navbar:
-        admin_header: "Admin Page"
-        toggle_navigation: "Toggle navigation"
-        back_to_public_page: "Back to public page"
-        logout: "Logout"
-        import_products: "Import Products"
-        statistic_orders: "Statistic orders"
-        setting: "Setting"
-    static_pages:
-      index:
-        dashboard_admin_title: "Dashboard Admin"
-        goto: "Go to"
-        manage_users: "Manage Users"
-        manage_products: "Manage Products"
-        manage_orders: "Manage Orders"
-    categories:
-      root_category: "New root category"
-      not_valid_parent: "Not valid parent"
-      not_found_category: "Not found category"
-      can_not_delete: "Can not delete root category"
-      index:
-        id: "id"
-        name: "Name"
-        parent_id: "Parent Id"
-        created_at: "Created At"
-        updated_at: "Updated At"
-        function: "Function"
-        manage_categories_title: "Manage Categories"
-        list_category: "List category"
-        add_new: "Add new"
-      destroy:
-        delete_success: "Delete success"
-        delete_failed: "Delete failed"
-        confirm: "Are you sure?"
-      edit:
-        update_category_title: "Update Category"
-      update:
-        update_success: "Update success"
-        update_failed: "Update failed"
-      new:
-        new_category_title: "New Category"
-      create:
-        add_success: "Add success"
-        add_failed: "Add failed"
-      category_form:
-        name_place_holder: "Input category name"
-        parent: "Parent"
-        button_submit: "Save"
-    products:
-      image_oversize: "should be less than 5MB"
-      not_found_product: "Not found product"
-      index:
-        id: "id"
-        picture: "Picture"
-        name: "Name"
-        quantity: "Quantity"
-        price: "Price"
-        category_name: "Category Name"
-        created_at: "Created At"
-        updated_at: "Updated At"
-        function: "Function"
-        manage_products_title: "Manage Products"
-        list_product: "List product"
-        add_new: "Add new"
-      edit:
-        update_product_title: "Update Products"
-      update:
-        update_success: "Update success"
-        update_failed: "Update failed"
-      destroy:
-        delete_success: "Delete success"
-        delete_failed: "Delete failed"
-        confirm: "Are you sure?"
-      new:
-        new_product_title: "New Product"
-      create:
-        add_success: "Add success"
-        add_failed: "Add failed"
-      product_form:
-        name_place_holder: "Input product name"
-        detail_place_holder: "Input product detail"
-        price_place_holder: "Input product price"
-        quantity_place_holder: "Input product quantity"
-        category: "Category"
-        button_submit: "Save"
-    users:
-      not_found_user: "Not found user"
-      index:
-        manage_users_title: "Manage users"
-        list_user: "List user"
-        id: "id"
-        name: "Name"
-        gender: "Gender"
-        address: "Address"
-        phone: "Phone"
-        email: "Email"
-        actived: "Activated"
-        name_email: "name,email"
-      destroy:
-        admin: "Can't delete admin"
-        delete_success: "Delete success"
-        delete_failed: "Delete failed"
-        confirm: "Are you sure?"
-      update:
-        update_success: "Update success"
-        update_failed: "Update failed"
-      gender:
-        male: "Male"
-        female: "Female"
-        none: "None"
-    orders:
-      statistic: "Statistic orders"
-      load_data: "Load data"
-      not_found_order: "Not found order"
-      order:
-        detail: "Detail"
-        accept: "Accept"
-        reject: "Reject"
-      index:
-        manage_orders_title: "Manager Orders"
-        list_order: "List order"
-        rank: "Rank"
-        user_email: "User email"
-        user_name: "User name"
-        total: "Total"
-        status: "Status"
-        created_at: "Created At"
-        updated_at: "Updated At"
-        function: "Function"
-      update:
-        check_status: "This order already %{status}"
-        update_success: "Update Success"
-        update_failed: "Update Failed"
-    order_details:
-      index:
-        manage_order_details_title: "Manager Order detail"
-        list_order_detail: "List order detail"
-        no_order: "No."
-        picture: "Picture"
-        name: "Product Name"
-        unit_price: "Unit price"
-        quantity: "Quantity"
-        total: "Total"
-    order_mailer:
-      admin_respon:
-        greeting: "Hello %{name}, "
-        message: "The order No.%{order_id} has been %{status}. Thank you!"
-        accept: "Accept"
-        reject: "Reject"
-        pending: "Pending"
-    suggests:
-      not_valid_parent: "Not valid parent"
-      not_found_category: "Not found suggest"
-      can_not_delete: "Can not delete root suggest"
-      index:
-        id: "id"
-        email: "Email"
-        category: "Category"
-        detail: "Detail"
-        status: "Status"
-        function: "Function"
-        manage_suggests_title: "Manage suggests"
-        list_suggest: "List suggest"
-        add_new: "Add new"
-      destroy:
-        delete_success: "Delete success"
-        delete_failed: "Delete failed"
-        confirm: "Are you sure?"
-      update:
-        success: "Change success"
-        failed: "Change fail"
-    import_products:
-      new:
-        import_product_title: "Import Products"
-      create:
-        import_failed: "Import failed"
-      product_import_form:
-        button_submit: "Submit"
-        file: "File"

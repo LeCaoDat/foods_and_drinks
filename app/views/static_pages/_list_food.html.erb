@@ -1,4 +1,4 @@
-<% if @food_product.any? %>
+<% if @food_product && @food_product.any? %>
   <%= render @food_product %>
 <% else %>
   <p><%= t "static_pages.no_item" %></p>
