@@ -49,6 +49,7 @@ en:
       home: "Home"
       suggest: "Suggest"
       search: "Search"
+      menu: "Menu"
     footer:
       design_by: "Design by DT"
   static_pages:
