@@ -493,7 +493,7 @@ input:focus {
   text-align: left;
   display: inline-block;
   padding: 2px 15px 2px 0;
-  margin: 0px 12px 0 0;
+  /* margin: 0px 12px 0 0; */
   font-size: 13px;
   border-right: 1px solid #000;
 }
@@ -609,8 +609,8 @@ input:focus {
 }
 }
 .language-currency-wrapper .block.block-language>ul {
-  min-width: 132px;
-  left: 0px;
+  min-width: 160px;
+  /* left: 0px; */
   margin: auto
 }
 .language-currency-wrapper .block.block-currency {
@@ -627,7 +627,7 @@ input:focus {
 }
 }
 .language-currency-wrapper .block.block-currency>ul {
-  min-width: 114px;
+  min-width: 140px;
   margin: auto
 }
 @media (max-width:479px) {

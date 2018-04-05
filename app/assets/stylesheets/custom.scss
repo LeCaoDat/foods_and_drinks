@@ -34,3 +34,14 @@
   text-transform: uppercase;
   width: 115px;
 }
+
+.flag-image {
+  width: 25px;
+  height: 15px;
+}
+
+@media (max-width: 767px) {
+  .header-top {
+    height: 40px;
+  }
+}

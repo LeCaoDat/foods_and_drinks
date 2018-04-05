@@ -91,6 +91,7 @@ vi:
       home: "Trang chủ"
       suggest: "Yêu cầu"
       search: "Tìm kiếm"
+      menu: "Menu"
     footer:
       design_by: "Thiết kế bởi CD"
   static_pages:
